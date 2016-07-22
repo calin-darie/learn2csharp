@@ -2,12 +2,12 @@
 
 namespace HelloWorld
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      Console.WriteLine("hi");
-        kkluiujku;
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, world!");
+            Console.ReadKey();
+        }
     }
-  }
 }
