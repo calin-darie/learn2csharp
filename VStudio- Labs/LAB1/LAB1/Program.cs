@@ -10,12 +10,21 @@ namespace LAB1
     {
         static void Main(string[] args)
         {
-            float A = 26;
-            float B = 7;
+           
+          
+            Console.Write("Enter Value for A: ");
+            string userTypesA = Console.ReadLine();
+           double A = Convert.ToDouble(userTypesA);
+
+
+            Console.Write("Enter Value for B: ");
+            string userTypesB = Console.ReadLine();
+            double B = Convert.ToDouble(userTypesB); ;
+
             var myResult = A / B;
 
+            Console.WriteLine("The Result for Exercise 1 is: " + myResult);
 
-            Console.WriteLine("The Result is" +" " + myResult);
             Console.ReadKey();
 
 
