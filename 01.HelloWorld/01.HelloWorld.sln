@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{5B6CAFDB-A151-4F1D-AF02-57C8294289FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "division", "division\division.csproj", "{F30960AC-3A2D-4D93-87DE-853E4ED0395B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{5B6CAFDB-A151-4F1D-AF02-57C8294289FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B6CAFDB-A151-4F1D-AF02-57C8294289FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B6CAFDB-A151-4F1D-AF02-57C8294289FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F30960AC-3A2D-4D93-87DE-853E4ED0395B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30960AC-3A2D-4D93-87DE-853E4ED0395B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30960AC-3A2D-4D93-87DE-853E4ED0395B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30960AC-3A2D-4D93-87DE-853E4ED0395B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
