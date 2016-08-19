@@ -10,16 +10,17 @@ namespace While01
     {
         static void Main(string[] args)
         {
-            int number = int.Parse(Console.ReadLine());
-            int i = 0;
+            Console.WriteLine("Choose a number");
+            var number = int.Parse(Console.ReadLine());
 
-            //write your solution
-            //make a while loop
-            /* the condition should be that i is less and equal than number
-            inside the loop print i and increment variable i */
+            Console.WriteLine("Type one for i as well");
+            var i = int.Parse(Console.ReadLine());
 
-
-            Console.ReadKey();
+            while (i > number)
+            {
+                Console.WriteLine("i is the best");
+                i++;
+            }
         }
     }
 }
