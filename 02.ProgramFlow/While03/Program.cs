@@ -14,8 +14,19 @@ namespace While03
             int generatedNumber = r.Next(100); //random number in range [0-99]
 
             //write your solution here.
+            Console.WriteLine("please try to guess the generated nr:");
+            int user_nr=100;// nu cred ca asta e bine; am initializat asa ca sa scap de o eroare si am zis ca oricum e in afara intervalului dar nu cred ca e corect sau elegant
 
+            while (generatedNumber!=user_nr)
+            { 
+                string user_nr_String = Console.ReadLine();
+                user_nr = int.Parse(user_nr_String);
 
+                if (generatedNumber>user_nr)
+                { Console.WriteLine("It is bigger"); }
+                else
+                { Console.WriteLine("It is smaller"); }
+            }
 
             Console.WriteLine("Congratulations! You guessed the number!");
             Console.ReadKey();
