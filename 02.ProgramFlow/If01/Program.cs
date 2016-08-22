@@ -12,7 +12,27 @@ namespace If01
         {
             Console.WriteLine("Your age:");
             string ageString = Console.ReadLine();
-            int age = int.Parse(ageString);
+            int age;
+
+            //catch exception
+            //try
+            //{
+            //    age = int.Parse(ageString);
+            //}
+            //catch(Exception e)
+            //{
+            //    Console.WriteLine("Ai gresit");
+            //    return;
+            //}
+
+            //try parse
+            bool result = int.TryParse(ageString, out age);
+            if (result == false)
+            {
+                Console.WriteLine("Ai gresit");
+            }
+
+
             Console.WriteLine("Your sex:"); //male or female
             string sex = Console.ReadLine();
 
