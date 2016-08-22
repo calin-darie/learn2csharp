@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchOnEnum", "SwitchOnEnu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "if02", "if02\if02.csproj", "{0E189F56-7782-4920-83AE-E84F5F1D04C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "While02", "While02\While02.csproj", "{A38A92F0-1CC4-4AD3-8EA9-054C42A9710A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{0E189F56-7782-4920-83AE-E84F5F1D04C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E189F56-7782-4920-83AE-E84F5F1D04C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E189F56-7782-4920-83AE-E84F5F1D04C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38A92F0-1CC4-4AD3-8EA9-054C42A9710A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38A92F0-1CC4-4AD3-8EA9-054C42A9710A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38A92F0-1CC4-4AD3-8EA9-054C42A9710A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38A92F0-1CC4-4AD3-8EA9-054C42A9710A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
