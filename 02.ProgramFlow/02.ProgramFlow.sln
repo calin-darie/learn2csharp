@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{284F5301-AF40-4458-874F-D6E88748F7CB}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "While03", "While03\While03.csproj", "{279817AF-B3A4-4767-8B25-A9EC97F1F398}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchOnEnum", "SwitchOnEnum\SwitchOnEnum.csproj", "{73645496-7765-47DE-ACF7-AD6FC199EC3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "if02", "if02\if02.csproj", "{0E189F56-7782-4920-83AE-E84F5F1D04C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{73645496-7765-47DE-ACF7-AD6FC199EC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73645496-7765-47DE-ACF7-AD6FC199EC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73645496-7765-47DE-ACF7-AD6FC199EC3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E189F56-7782-4920-83AE-E84F5F1D04C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E189F56-7782-4920-83AE-E84F5F1D04C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E189F56-7782-4920-83AE-E84F5F1D04C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E189F56-7782-4920-83AE-E84F5F1D04C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
