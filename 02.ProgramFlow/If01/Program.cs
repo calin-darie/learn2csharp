@@ -10,29 +10,49 @@ namespace if01
     {
         static void Main(string[] args)
         {
-            Console.Write ("What is your age?");
+            Console.Write("What is your gender?");
+            var gender = (Console.ReadLine());
+            Console.WriteLine("What is your age?");
             string ageAsString = (Console.ReadLine());
             int age = int.Parse(ageAsString);
-            Console.WriteLine("What is your gender?");
-            var gender = (Console.ReadLine());
-        
 
-            if (( age > 24) && (gender == "male"))
+            /*   if answer is Not male then do not print valid or not valid
+             * */
+
+            if (gender == "male")
+            /*Console.WriteLine ("What is your age?")
+             * */
             {
-                Console.WriteLine("You are a valid person.");
+                if (age >= 24)
+                {
+                    Console.WriteLine("You are a valid person.");
+                }
+
+
+
+                else
+                {
+
+                    Console.WriteLine("You are an invalid person.");
+                }
             }
 
-            else
+            if (gender == "female")
             {
-                Console.WriteLine("You are an invalid person.");
+                if ((age <= 32) && (age >= 20))
+                {
+                    Console.WriteLine("You are a valid person.");
+                }
+                else
+                {
+                    Console.WriteLine("You are an invalid person.");
+                }
             }
 
-            if ((age > 20) && ( age < 32) && (gender == "female"))
-            {
-                Console.WriteLine("You are a valid person.");
-            }
-            }
+            Console.ReadKey();
 
         }
+
     }
+}
 
