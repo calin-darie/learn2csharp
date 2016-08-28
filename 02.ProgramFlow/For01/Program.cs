@@ -23,6 +23,7 @@ namespace For01
                 }
             }
             Console.ReadKey();
+            //n-am inteles de ce sa folosesc {}?
         }
     }
 }
