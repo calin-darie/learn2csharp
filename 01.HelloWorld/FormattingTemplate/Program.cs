@@ -13,7 +13,7 @@ namespace FormattingTemplate
             int kilometers = 10; 
             double time = 1.5;
             bool truth = true;
-            string name = "Gigi";
+            string name = "Mike";
 
             Console.WriteLine("{0} has ran {1} kilometers in {2} hours. It is {3} that he's a family man." +
             "He takes his brother out for a drink at a bar called Gigis Han. He and his wife are going to have a son." +
