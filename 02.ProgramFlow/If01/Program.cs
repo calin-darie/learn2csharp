@@ -17,8 +17,28 @@ namespace If01
             Console.WriteLine("Your sex:"); //male or female
             string sex = Console.ReadLine();
 
-            //write here your solution
-
+            if (sex == "female")
+            {
+                if (age >= 20 && age <= 32)
+                {
+                    Console.WriteLine("Valid Person");
+                }
+                else
+                {
+                    Console.WriteLine(" Invalid Person");
+                }
+            }
+            else
+            {
+                if (age == 24)
+                {
+                    Console.WriteLine("Valid Person");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Person");
+                }
+            }
 
             Console.ReadKey();
         }
