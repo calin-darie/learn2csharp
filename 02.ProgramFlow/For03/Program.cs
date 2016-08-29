@@ -16,7 +16,7 @@ namespace For03
             Console.WriteLine("this is your interval({0},{1}):", 0, user_nr);
             for (int i = 0; i <= user_nr; i++)
             {
-                if (i % 10 == 0)
+                if (i % (5*2) == 0)
                 {
                   Console.WriteLine("Number {0} is divisible by {1} and by {2} and by {3} ", i, 10, 2, 5);
                 }
