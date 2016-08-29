@@ -25,7 +25,7 @@ namespace If01
 
                 Console.WriteLine("Your sex:");
                 string sex = Console.ReadLine();
-
+                
                 //test: sex has expected values
                 if (sex.ToLower() != "male" && sex.ToLower() != "female")
                 {
@@ -34,7 +34,7 @@ namespace If01
                 else
                 {
                     //identify males over 24 and females between 20 and 32
-                    if ((sex.ToLower() == "male" && age > 24)
+                    if ((sex.ToLower() == "male" && age == 24)
                         || (sex.ToLower() == "female" && age >= 20 && age <= 32))
                     {
                         Console.WriteLine("Valid person");

@@ -17,21 +17,21 @@ namespace For03
 
             for (int i = 0; i <= value; i++)
             {
-                if (i % 10 == 0)
+                if (i % (2*5) == 0)
                 {
                     Console.WriteLine("Number {0} is divisible by ten", i);
                 }
                 else if (i % 2 == 0)
                 {
-                    Console.WriteLine("Number {0} is divisible by five", i);
+                    Console.WriteLine("Number {0} is divisible by two", i);
                 }
                 else if (i % 5 == 0)
                 {
-                    Console.WriteLine("Number {0} is divisible by two", i);
+                    Console.WriteLine("Number {0} is divisible by five", i);
                 }                                    
             }
 
-            Console.ReadKey();
+           Console.ReadKey();
         }
     }
 }
