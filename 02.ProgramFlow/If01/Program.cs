@@ -17,27 +17,34 @@ namespace If01
             Console.WriteLine("Your sex:"); //male or female
             string sex = Console.ReadLine();
             
-            if (sex == "male")
+            if (sex.ToLower() != "male" && sex.ToLower() != "female")
             {
-                if (age == 24 )
-                {
-                    Console.WriteLine("Valid person.");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid person.");
-                }
-                
+                Console.WriteLine("Invalid person.");
             }
-            else if (sex == "female")
+            else 
             {
-                if (age >= 20 && age <= 32)
+                if (sex.ToLower() == "male")
                 {
-                    Console.WriteLine("Valid person.");
+                    if (age == 24 )
+                    {
+                        Console.WriteLine("Valid person.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid person.");
+                    }
+                
                 }
-                else
+                else if (sex.ToLower() == "female")
                 {
-                    Console.WriteLine("Invalid person.");
+                    if (age >= 20 && age <= 32)
+                    {
+                        Console.WriteLine("Valid person.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid person.");
+                    }
                 }
             }
 
