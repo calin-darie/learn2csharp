@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "While01", "While01\While01.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "while02", "while02\while02.csproj", "{2C4A4FFD-CD23-47AD-B979-F088593C46F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocksEx", "RocksEx\RocksEx.csproj", "{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalinExercise", "CalinExercise\CalinExercise.csproj", "{1FBB0355-9D4C-41AB-9187-D2BD4D685F95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,14 @@ Global
 		{2C4A4FFD-CD23-47AD-B979-F088593C46F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C4A4FFD-CD23-47AD-B979-F088593C46F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C4A4FFD-CD23-47AD-B979-F088593C46F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FBB0355-9D4C-41AB-9187-D2BD4D685F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FBB0355-9D4C-41AB-9187-D2BD4D685F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FBB0355-9D4C-41AB-9187-D2BD4D685F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FBB0355-9D4C-41AB-9187-D2BD4D685F95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
