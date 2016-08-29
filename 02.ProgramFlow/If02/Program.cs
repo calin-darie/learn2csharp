@@ -18,19 +18,20 @@ namespace If02
             {
                 Console.WriteLine("Color of the apple is:");
                 string color = Console.ReadLine();
-             if (color == "green")
-             {
-                 Console.WriteLine("Green apples are my favourite.");
-             }
-             if (color == "red")
-             {
-                 Console.WriteLine("Snow White likes red apples!");
-             }
-             else
-             {
-                 Console.WriteLine("I do not know such kind of apples.");
-             }
+                if (color == "green")
+                {
+                    Console.WriteLine("Green apples are my favourite.");
+                }
+                if (color == "red")
+                {
+                    Console.WriteLine("Snow White likes red apples!");
+                }
+                else if (color != "green" && color != "red")
+                {
+                    Console.WriteLine("I do not know such kind of apples.");
+                }
             }
+
             if (fruit == "orange")
             {
                 Console.WriteLine("Is the orange sweet, or sour?");
@@ -39,7 +40,7 @@ namespace If02
                 {
                     Console.WriteLine("Sweet oranges are the best.");
                 }
-                if (taste =="sour")
+                if (taste == "sour")
                 {
                     Console.WriteLine("Is the orange big or small?");
                     string size = Console.ReadLine();
@@ -50,13 +51,13 @@ namespace If02
                     if (size == "small")
                     {
                         Console.WriteLine("Maybe you have a lime instead of an orange!");
-                    }               
+                    }
                 }
             }
-            else
+            else if (fruit != "orange" && fruit != "apple")
             {
-                Console.WriteLine("_the_name_of_the_fruit_is not on our list. I like apples and oranges.");
+                Console.WriteLine("{0} is not on our list. I like apples and oranges.", fruit);
             }
         }
-    }
+        }
 }
