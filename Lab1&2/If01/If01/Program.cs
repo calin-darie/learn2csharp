@@ -20,7 +20,7 @@ namespace If01
             Console.WriteLine("Please insert your sex (male/female):");
             Sex = Console.ReadLine();
 
-            if (Sex.Equals("male"))
+            if (Sex.ToLower().Equals("male"))
             {
                 if (Age == 24)
                 {
@@ -32,7 +32,7 @@ namespace If01
                 }
             }
             else 
-                if (Sex.Equals("female"))
+                if (Sex.ToLower().Equals("female"))
                 {
                     if ((Age >=20) && (Age <=32))
                     {
