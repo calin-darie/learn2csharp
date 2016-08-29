@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "ConsoleApplication1\HelloWorld.csproj", "{DC5D70C7-FB50-4E57-9A8B-860D7358117A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivideNr", "DivideNr\DivideNr.csproj", "{1C4FFE70-3D8B-495B-9317-EFBCDD294B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigiOnTheRun", "GigiOnTheRun\GigiOnTheRun.csproj", "{89A681CF-AC7D-4320-A7DD-3C14C3058F2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC5D70C7-FB50-4E57-9A8B-860D7358117A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5D70C7-FB50-4E57-9A8B-860D7358117A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5D70C7-FB50-4E57-9A8B-860D7358117A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5D70C7-FB50-4E57-9A8B-860D7358117A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C4FFE70-3D8B-495B-9317-EFBCDD294B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4FFE70-3D8B-495B-9317-EFBCDD294B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4FFE70-3D8B-495B-9317-EFBCDD294B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C4FFE70-3D8B-495B-9317-EFBCDD294B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A681CF-AC7D-4320-A7DD-3C14C3058F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A681CF-AC7D-4320-A7DD-3C14C3058F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A681CF-AC7D-4320-A7DD-3C14C3058F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A681CF-AC7D-4320-A7DD-3C14C3058F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
