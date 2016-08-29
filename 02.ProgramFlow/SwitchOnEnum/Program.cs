@@ -16,6 +16,7 @@ namespace SwitchOnEnum
         {
             DateTime date = ReadDate();
             Season season = GetSeason(date);
+            Console.WriteLine("ai ales sezonul: " + season);
             string song;
 
             switch (season)
@@ -23,7 +24,15 @@ namespace SwitchOnEnum
                 case Season.Winter:
                     song = "Ada Milea - Bradu' a murit";
                     break;
-                    //todo: how about the other seasons? fill them all in
+                case Season.Summer:
+                    song = "Mare albastra";
+                    break;
+                case Season.Spring:
+                    song = "Vine , vine primavara";
+                    break;
+                case Season.Autumn:
+                    song = "toamna in depresie";
+                    break;
                 default:
                     throw new InvalidOperationException("after handling all seasons above, this code becomes unreachable");
             }
