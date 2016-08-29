@@ -12,8 +12,7 @@ namespace If02
         {
             Console.WriteLine("Your fruit is:");
             string fruit = Console.ReadLine();
-            //Console.ReadKey();
-
+            
             if (fruit == "apple")
             {
                 Console.WriteLine("Color of the apple is:");
@@ -58,6 +57,7 @@ namespace If02
             {
                 Console.WriteLine("{0} is not on our list. I like apples and oranges.", fruit);
             }
+            Console.ReadKey();
         }
         }
 }
