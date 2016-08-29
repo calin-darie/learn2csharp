@@ -13,12 +13,13 @@ namespace While01
             int number = int.Parse(Console.ReadLine());
             int i = 0;
 
-            //write your solution
-            //make a while loop
-            /* the condition should be that i is less and equal than number
-            inside the loop print i and increment variable i */
-
-
+            while (i <= number)
+            {
+             Console.Write("Number {0} in the [0,{1}] range is:", i, number);
+             Console.WriteLine(i);
+             //if we forget to increment i in the while llop, we'll have an infinite loop
+             i++;
+            }
             Console.ReadKey();
         }
     }
