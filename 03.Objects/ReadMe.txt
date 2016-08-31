@@ -24,7 +24,7 @@ Math.Sqrt((clickPointX - circleCenterX)*(clickPointX - xA) + (clickPointY - circ
 
 
 
-2) The game has to detect when two circles are colliding with each other.de
+2) The game has to detect when two circles are colliding with each other.
 
 Given 
 circle A, centered at (circleCenterX, circleCenterY), with a radius of radiusA and
@@ -41,7 +41,7 @@ Math.Sqrt((othercircleCenterX - circleCenterX)*(othercircleCenterX - circleCente
 3) Time to clean the code up a little - part 1: extracting a method. 
 See how the formula to compute the distance between two points appears twice in the program? This is wrong in multiple ways:
 - as a reader of the program, you have no immediate way to figure out that the logic is the same. Suppose someone else reads your code, or you revisit it one year from now. You'll have to carefully compare the code to know it's the same logic. You have to understand the same logic twice. 
-- as a bug fixer, you'll have to remember to fix twice. Suppose someone reports a bug for clicking on a circle. You happily fix only the first of the two occurences, oblivious of the second. The point-in-circle part of the program gets retested. The issue gets closed. Suppose another bug is reported, this time for the collision detection. Someone else fixes that bug, and after testing only collision detection, the second bug is closed. Now we're in a mess: we still have two bugs about to be reported, so we're going through the overhead of reporting-planning-dev-testing twice. And now we have code that was originally supposed to work the same, but has diverged, and not by design. If someone now carefully compares the two pieces of code, they'll discover it's not the same logic. "Hmm... this could be for a reason. No one quite remembers why, and we don't have time to investigate right now.". If you need to reuse the logic for a third purpose, which version will they extract now and why?
+- as a bug fixer, you'll have to remember to fix twice. Suppose someone reports a bug for clicking on a circle. You happily fix only the first of the two occurrences, oblivious of the second. The point-in-circle part of the program gets retested. The issue gets closed. Suppose another bug is reported, this time for the collision detection. Someone else fixes that bug, and after testing only collision detection, the second bug is closed. Now we're in a mess: we still have two bugs about to be reported, so we're going through the overhead of reporting-planning-dev-testing twice. And now we have code that was originally supposed to work the same, but has diverged, and not by design. If someone now carefully compares the two pieces of code, they'll discover it's not the same logic. "Hmm... this could be for a reason. No one quite remembers why, and we don't have time to investigate right now.". If you need to reuse the logic for a third purpose, which version will they extract now and why?
 - as a new story developer, if you ever want to reuse the code, you'll want to extract it into its own method eventually
 
 So we need to extract the duplicated logic into its own method. 
@@ -56,7 +56,7 @@ For our example, let's give the new method a name to explain its purpose, like D
 
         static double DistanceBetweenPoints(double pointX, double pointY, double otherPointX, double otherPointY)
 
-We're making this method static, to be able to call it from the static method Main. The first double is the return type. Then comes the name. Then, between parantheses, comes the parameter list.
+We're making this method static, to be able to call it from the static method Main. The first double is the return type. Then comes the name. Then, between parentheses, comes the parameter list.
 
 After the signature, in curly brackets, comes the method body . The body needs to compute and then return the distance. You may first compute the distance in a variable, then return that variable. This is what the body may look like:
 
@@ -170,6 +170,8 @@ There are already some tests in there, that you'll have to enable and run.
 - Press ctrl+R,T to run the tests
 - Watch the status bar to know when the tests are done. Then look for the Test Explorer window for the test results.
 
+Try to make the test fail by writing wrong code in DistanceTo. Then make it right again.
+
 7) Notice the pattern 
 Console.WriteLine();
 var x = ReadDouble("x: ");
@@ -182,7 +184,7 @@ static Point ReadPoint (string prompt)
     // writeline prompt; read x and y; construct a point; return the point you created
 }
 
-Replace all three occurences of the pattern with the method.
+Replace all three occurrences of the pattern with the method.
         Point circleCenter = ReadPoint("Enter center coordinates");
         ...
         Point clickPoint = ReadPoint("Enter click coordinates");
