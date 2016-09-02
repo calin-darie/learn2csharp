@@ -18,6 +18,11 @@ namespace While01
             /* the condition should be that i is less and equal than number
             inside the loop print i and increment variable i */
 
+            while (i <= number)
+            {
+                Console.Write(" " + i + " ");
+                i++;    // without this line, if number is >= 0 then this loop will never end !
+            }
 
             Console.ReadKey();
         }
