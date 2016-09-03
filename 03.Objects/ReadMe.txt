@@ -144,6 +144,13 @@ Now that's nicer, more concise. Next, let's move on to replace the second call w
 
 DistanceBetween(circleCenter, othercircleCenter)
 
+Optionally, create a constructor for Point.
+When you call the constructor like this: 
+
+    new Point (5, 17)
+
+You should get a point with X set to 5, and Y set to 17
+
 To finish this exercise, delete DistanceBetweenPoints. We donn't need it anymore.
 
 5) Add behavior to Point.
