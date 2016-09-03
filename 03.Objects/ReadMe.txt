@@ -6,6 +6,9 @@ You will learn about:
 - fields
 - constructors
 
+Test often! Test and commit (but not push) after each exercise. 
+This way you can go about the changes with courage. 
+Should something go horribly wrong, don't panic! You've got git to back you up. Go to team explorer, find the changes tab, right click any file or files you want to revert to the previous commit, and choose to undo the changes.
 
 Suppose you develop a simple 2D game. In this game, there are some circles moving on a 2D surface.
 
@@ -167,7 +170,7 @@ There are already some tests in there, that you'll have to enable and run.
 - At the top of the Solution Explorer window, there's a toolbar, with a home button and some other buttons. Hover over the buttons, and wait for the toolptip. Among them there's one whose tooltip says "Show All Files". Click Show All Files
 - A bunch of files appear as children of the unit tests project. Right click on PointDistanceTo.cs, and pick "Include in project" from the context menu
 - Open PointDistanceTo.cs by double clicking it
-- Press ctrl+R,T to run the tests
+- Press ctrl+R,A to run all the tests, or ctrl+R,T to run the tests at the cursor.
 - Watch the status bar to know when the tests are done. Then look for the Test Explorer window for the test results.
 
 Try to make the test fail by writing wrong code in DistanceTo. Then make it right again.
@@ -238,21 +241,21 @@ Replace the call to IsPointInCircle with a call to
 
 You may now remove the now unused IsPointInCircle method.
 
-Include and run the CircleContains tests
+Include CircleContainsPoint.cs in the unit tests project and run the  tests again.
 
 10) There's another comment trying to explain what part of Main is doing:
 // did the circles collide?
-Create a method on Circle named Intersects, that takes another Circle and returns a bool: true when the two circles intersect, false when they don't
+Create a method on Circle named CollidesWith, that takes another Circle and returns a bool: true when the two circles collide, false when they don't
 
-        public bool Intersects(Circle other)
+        public bool CollidesWith(Circle other)
         {
             // compute distance to other circle's center; compare with sum of radii; return the result;
 			// as a first step, you may want paste the lines you're trying to extract here; circleCenter becomes this.center; othercircleCenter becomes other.Center
         }
 
-Include and run the CircleIntersects tests.
+Include and run the CircleCollidesWith tests.
 
-Create another Circle object for the other circle
+Back in Main, create another Circle object for the second circle we're reading.
 
             Circle othercircle = new Circle
             {
@@ -260,11 +263,12 @@ Create another Circle object for the other circle
                 Radius = othercircleRadius
             };
 
-Replace the lines the comment explains with a call to Intersects:
+Replace the lines the comment explains with a call to CollidesWith:
 
-	circle.Intersects(othercircle)
+	circle.CollidesWith(othercircle)
 
 Remove the "// did the circles collide?" comment
+
 
 11) Extract a ReadCircle method and use it twice. This should be similar to the way you extracted ReadPoint earlier.
 
@@ -272,14 +276,39 @@ Remove the "// did the circles collide?" comment
 
 The code in Main should now look like:
             var circle = ReadCircle("Describe a circle");
-			.
-			.
-			.
+			...
             var otherCircle = ReadCircle("Describe another circle");
 
+12) White box testing. Your first unit test.
 
+	Add the method below to Circle:
 
+    public class Circle
+    {
+		...
+        public bool Contains(Circle other)
+        {
+            double distanceBetweenCenters = this.Center.DistanceTo(other.Center);
+            return distanceBetweenCenters < this.Radius;
+        }
+		...
+    }
 
+	Include and run the CircleContainsCircle unit tests.
+
+	There's a bug in this new Contains method, that the existing tests aren't catching. 
+	You must find a test case that's failing, write the test, see it fail, then fix the Contains method. *Don't* use the console. 
+	
+	Write a new unit test in CircleContainsCircle to verify your assumptions. Play with the values in the test and run it often. It's faster than using the console, and then it stays there as self-executing spec for your program.
+	
+	If intuition is failing you, you may use drawings on math / graph paper, or just google "circle contains circle", or look at the answer here http://stackoverflow.com/questions/33490334/check-if-a-circle-is-contained-in-another-circle
+	In any case, first write the failing unit test, and only then solve the problem in the Circle class. 
+	
+	You're done when the new test changes from red to green.
+	Of course, if you have other test cases in mind, go ahead and write automated tests for them :)
+	
+	Note that we can name two methods the same as long as their parameter types vary. This is called overloading.
+	
 
 ===============================================================
 This series of exercises has just evolved code written like a script to something that starts to resemble Object Oriented Programming.

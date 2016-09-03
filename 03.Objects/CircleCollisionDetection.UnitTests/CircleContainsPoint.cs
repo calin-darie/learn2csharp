@@ -3,26 +3,10 @@
 namespace CircleCollisionDetection.UnitTests
 {
     [TestClass]
-    public class Contains
+    public class CircleContainsPoint
     {
-
         [TestMethod]
-        public void PointOnCircle()
-        {
-            var circle = new Circle
-            {
-                Center = new Point { X= 1, Y = 1 },
-                Radius = 10
-            };
-            var point = new Point { X=  11, Y = 1 };
-
-            var circleContainsPoint = circle.Contains(point);
-
-            Assert.IsTrue(circleContainsPoint);
-        }
-
-        [TestMethod]
-        public void GivenPointIsCircleCenter_ContainsReturnsTrue()
+        public void GivenPointIsCircleCenter_Contains_ReturnsTrue()
         {
             var circle = new Circle
             {
@@ -37,7 +21,7 @@ namespace CircleCollisionDetection.UnitTests
         }
 
         [TestMethod]
-        public void PointInsideCircle()
+        public void GivenPointInsideCircle_Contains_ReturnsTrue()
         {
             var circle = new Circle
             {
@@ -52,7 +36,7 @@ namespace CircleCollisionDetection.UnitTests
         }
 
         [TestMethod]
-        public void PointOutsideCircle()
+        public void GivenPointOutsideCircle_Contains_ReturnsFalse()
         {
             var circle = new Circle
             {
@@ -64,6 +48,21 @@ namespace CircleCollisionDetection.UnitTests
             var circleContainsPoint = circle.Contains(point);
 
             Assert.IsFalse(circleContainsPoint);
+        }
+
+        [TestMethod]
+        public void GivenPointOnCircle_Contains_ReturnsTrue()
+        {
+            var circle = new Circle
+            {
+                Center = new Point { X = 1, Y = 1 },
+                Radius = 10
+            };
+            var point = new Point { X = 11, Y = 1 };
+
+            var circleContainsPoint = circle.Contains(point);
+
+            Assert.IsTrue(circleContainsPoint);
         }
     }
 }

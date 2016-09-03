@@ -52,12 +52,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CircleCollisionDetection\CircleCollisionDetection.csproj">
-      <Project>{ffea51ac-5895-4a15-b8fe-4c19919a444f}</Project>
-      <Name>CircleCollisionDetection</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

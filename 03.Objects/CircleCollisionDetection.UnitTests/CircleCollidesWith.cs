@@ -3,10 +3,10 @@
 namespace CircleCollisionDetection.UnitTests
 {
     [TestClass]
-    public class CollidesWith
+    public class CircleCollidesWith
     {
         [TestMethod]
-        public void GivenDisjointCircles_CircleCollidesWith_ReturnsFalse()
+        public void GivenDisjointCircles_CollidesWith_ReturnsFalse()
         {
             var c1 = new Circle
             {
@@ -25,7 +25,7 @@ namespace CircleCollisionDetection.UnitTests
         }
 
         [TestMethod]
-        public void GivenTangentCircles_CircleCollidesWith_ReturnsTrue()
+        public void GivenTangentCircles_CollidesWith_ReturnsTrue()
         {
             var c1 = new Circle
             {
@@ -44,7 +44,7 @@ namespace CircleCollisionDetection.UnitTests
         }
 
         [TestMethod]
-        public void GivenOverlappingCircles_CircleCollidesWith_ReturnsTrue()
+        public void GivenOverlappingCircles_CollidesWith_ReturnsTrue()
         {
             var c1 = new Circle
             {
@@ -63,7 +63,7 @@ namespace CircleCollisionDetection.UnitTests
         }
 
         [TestMethod]
-        public void GivenNestingCircles_CircleCollidesWith_ReturnsTrue()
+        public void GivenNestingCircles_CollidesWith_ReturnsTrue()
         {
             var c1 = new Circle
             {
