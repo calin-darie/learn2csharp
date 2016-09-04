@@ -15,13 +15,17 @@ namespace DivideNumbers
 
             //intialize variables
             int dividend = 26;
-            int intDivisor = 7; //will be used to obtain the integer quotient
-            float floatDivisor = 7; //will be used to obtain the exact quotient
 
-            //prints the integer quotient and remainder and the exact quotient
-            //division is performed inline
-            Console.WriteLine("The integer quotient of the division {0}/{1} is {2} and the remainder {3}", dividend, intDivisor, dividend / intDivisor, dividend % intDivisor);
-            Console.WriteLine("The exact quotient of the division {0}/{1} is {2}", dividend, floatDivisor, dividend / floatDivisor);
+            float floatDivisor = 7;
+            float exactQuotient = dividend / floatDivisor;
+
+            int intDivisor = 7;
+            int integerQuotient = dividend / intDivisor;
+            int remainder = dividend % intDivisor;
+
+
+            Console.WriteLine("The integer quotient of the division {0}/{1} is {2} and the remainder {3}", dividend, intDivisor, integerQuotient, remainder);
+            Console.WriteLine("The exact quotient of the division {0}/{1} is {2}", dividend, floatDivisor, exactQuotient);
             Console.ReadKey();
         }
     }

@@ -16,7 +16,7 @@ namespace While03
 
             Console.WriteLine("Guess the number:");
             string input = Console.ReadLine();
-            value = int.Parse(input); //assumption: the input is an integer > 0
+            value = int.Parse(input); //assumption: the input is an integer
 
             while (value != generatedNumber)
             {

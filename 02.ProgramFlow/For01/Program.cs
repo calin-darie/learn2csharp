@@ -16,9 +16,8 @@ namespace For01
             value = int.Parse(input); //assumption: the input is an integer > 0
 
             Console.WriteLine("Even numbers between 0 and {0}:",value);
-            for (int i = 0; i <= value-2; )
+            for (int i = 0; i <= value; i += 2)
             {
-                i += 2;
                 Console.Write("{0} ",i);
             }
             Console.ReadKey();

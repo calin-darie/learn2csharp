@@ -46,9 +46,13 @@ namespace If02
                     {
                         Console.WriteLine("Congrats! You have a big sour orange!");
                     }
-                    else
+                    else if (size.ToLower() == "small")
                     {
                         Console.WriteLine("Maybe you have a lime instead of an orange!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tthis is not a size I understand. Maybe you're from the US?");
                     }
                 }
                 else
