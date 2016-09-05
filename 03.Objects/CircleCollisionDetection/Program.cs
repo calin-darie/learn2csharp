@@ -5,9 +5,25 @@ namespace CircleCollisionDetection
     class Program
     {
 
-        static double DistanceBetweenPoints(double pointX, double pointY, double otherPointX, double otherPointY)
+        //static double DistanceBetweenPoints(double pointX, double pointY, double otherPointX, double otherPointY)
+        //{
+        //    var point = new Point
+        //    {
+        //        X = pointX,
+        //        Y = pointY
+        //    };
+        //    var otherPoint = new Point
+        //    {
+        //        X = otherPointX,
+        //        Y = otherPointY
+        //    };
+
+        //    return DistanceBetween(point, otherPoint);
+        //}
+
+        static double DistanceBetween(Point point, Point otherPoint)
         {
-            var distance = Math.Sqrt((pointX - otherPointX) * (pointX - otherPointX) + (pointY - otherPointY) * (pointY - otherPointY));
+            var distance = Math.Sqrt((point.X - otherPoint.X) * (point.X - otherPoint.X) + (point.Y - otherPoint.Y) * (point.Y - otherPoint.Y));
             return distance;
         }
 
@@ -19,20 +35,17 @@ namespace CircleCollisionDetection
             double circleCenterX = ReadDouble("x: ");
             double circleCenterY = ReadDouble("y: ");
             double radius = ReadDouble("radius: ");
+            var circleCenter = new Point(circleCenterX, circleCenterY);
 
             Console.WriteLine("Enter click coordinates");
             double clickPointX = ReadDouble("x: ");
             double clickPointY = ReadDouble("y: ");
-
-
+            var clickPoint = new Point(clickPointX, clickPointY);
 
             //was the click point on the circle?
-            // Initial form (for the first exercise) :
-            //bool wasClickOnCircle = (radius >= Math.Sqrt((clickPointX - circleCenterX) * (clickPointX - circleCenterX) + (clickPointY - circleCenterY) * (clickPointY - circleCenterY)) );
-            // After first cleanup :
-            bool wasClickOnCircle = ( radius >= DistanceBetweenPoints(clickPointX, clickPointY, circleCenterX, circleCenterY) );
-            
-            var clickMessage = wasClickOnCircle ? 
+            bool wasClickOnCircle = ( radius >= DistanceBetween(clickPoint, circleCenter) );
+
+            var clickMessage = wasClickOnCircle ?
                 "Click was on the circle." :
                 "Click happened outside the circle.";
             Console.WriteLine(clickMessage);
@@ -41,18 +54,16 @@ namespace CircleCollisionDetection
             double otherCircleCenterX = ReadDouble("x: ");
             double otherCircleCenterY = ReadDouble("y: ");
             double otherCircleRadius = ReadDouble("radius: ");
+            var otherCircleCenter = new Point(otherCircleCenterX, otherCircleCenterY);
 
             // did the circles collide?
-            // Initial form (for the first exercise) :
-            // bool didTheCirclesCollide = ( radius+otherCircleRadius <= Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) );
-            // After first cleanup :
-            bool didTheCirclesCollide = ( radius + otherCircleRadius <= DistanceBetweenPoints(circleCenterX, circleCenterY, otherCircleCenterX, otherCircleCenterY) );
+            bool didTheCirclesCollide = ( radius + otherCircleRadius <= DistanceBetween(circleCenter, otherCircleCenter) );
 
             var collisionMessage = didTheCirclesCollide ?
                 "The circles have collided." :
                 "No collision between the circles.";
             Console.WriteLine(collisionMessage);
-            
+
             Console.ReadKey();
         }
 
@@ -72,7 +83,7 @@ namespace CircleCollisionDetection
                 Console.Write(prompt);
                 string input = Console.ReadLine();
                 parsed = double.TryParse(input, out value);
-                if (!parsed) 
+                if (!parsed)
                 {
                     Console.WriteLine("'{0}' can not be converted to a {1}.", input, "double");
                 }
@@ -81,5 +92,17 @@ namespace CircleCollisionDetection
             return value;
         }
 
+    }
+
+    public class Point
+    {
+        public double X { get; set; }
+        public double Y { get; set; }
+
+        public Point( double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }
