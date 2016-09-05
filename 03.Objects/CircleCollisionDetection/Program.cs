@@ -4,6 +4,14 @@ namespace CircleCollisionDetection
 {
     class Program
     {
+
+        static double DistanceBetweenPoints(double pointX, double pointY, double otherPointX, double otherPointY)
+        {
+            var distance = Math.Sqrt((pointX - otherPointX) * (pointX - otherPointX) + (pointY - otherPointY) * (pointY - otherPointY));
+            return distance;
+        }
+
+
         static void Main()
         {
             Console.WriteLine("Describe a circle");
@@ -16,9 +24,14 @@ namespace CircleCollisionDetection
             double clickPointX = ReadDouble("x: ");
             double clickPointY = ReadDouble("y: ");
 
-            //was the click point on the circle?
-            bool wasClickOnCircle = false;//todo
 
+
+            //was the click point on the circle?
+            // Initial form (for the first exercise) :
+            //bool wasClickOnCircle = (radius >= Math.Sqrt((clickPointX - circleCenterX) * (clickPointX - circleCenterX) + (clickPointY - circleCenterY) * (clickPointY - circleCenterY)) );
+            // After first cleanup :
+            bool wasClickOnCircle = ( radius >= DistanceBetweenPoints(clickPointX, clickPointY, circleCenterX, circleCenterY) );
+            
             var clickMessage = wasClickOnCircle ? 
                 "Click was on the circle." :
                 "Click happened outside the circle.";
@@ -30,7 +43,11 @@ namespace CircleCollisionDetection
             double otherCircleRadius = ReadDouble("radius: ");
 
             // did the circles collide?
-            bool didTheCirclesCollide = false;//todo
+            // Initial form (for the first exercise) :
+            // bool didTheCirclesCollide = ( radius+otherCircleRadius <= Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) );
+            // After first cleanup :
+            bool didTheCirclesCollide = ( radius + otherCircleRadius <= DistanceBetweenPoints(circleCenterX, circleCenterY, otherCircleCenterX, otherCircleCenterY) );
+
             var collisionMessage = didTheCirclesCollide ?
                 "The circles have collided." :
                 "No collision between the circles.";
