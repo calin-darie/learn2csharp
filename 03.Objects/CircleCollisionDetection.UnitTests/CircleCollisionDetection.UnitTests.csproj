@@ -35,9 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CircleCollisionDetection">
-      <HintPath>..\CircleCollisionDetection\bin\Debug\CircleCollisionDetection.exe</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -54,9 +51,16 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CircleCollidesWith.cs" />
+    <Compile Include="CircleContainsCircle.cs" />
     <Compile Include="CircleContainsPoint.cs" />
     <Compile Include="PointDistanceTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CircleCollisionDetection\CircleCollisionDetection.csproj">
+      <Project>{ffea51ac-5895-4a15-b8fe-4c19919a444f}</Project>
+      <Name>CircleCollisionDetection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

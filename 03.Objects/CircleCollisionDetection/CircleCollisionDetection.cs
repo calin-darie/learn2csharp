@@ -15,10 +15,18 @@ namespace CircleCollisionDetection
         {
             return (this.Radius >= point.DistanceTo(this.Center));
         }
+
+        public bool Contains(Circle other)
+        {
+            double distanceBetweenCenters = this.Center.DistanceTo(other.Center);
+            return ( distanceBetweenCenters + other.Radius <= this.Radius );
+        }
+
         public bool CollidesWith(Circle other)
         {
             return ( this.Radius + other.Radius >= this.Center.DistanceTo(other.Center) );
-        } 
+        }
+         
 
         public Circle() { } 
 
