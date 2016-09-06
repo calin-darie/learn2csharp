@@ -1,65 +1,24 @@
 ﻿using System;
+using CircleCollisionDetection;
 
 namespace CircleCollisionDetection
 {
     class Program
     {
-
-        //static double DistanceBetweenPoints(double pointX, double pointY, double otherPointX, double otherPointY)
-        //{
-        //    var point = new Point
-        //    {
-        //        X = pointX,
-        //        Y = pointY
-        //    };
-        //    var otherPoint = new Point
-        //    {
-        //        X = otherPointX,
-        //        Y = otherPointY
-        //    };
-
-        //    return DistanceBetween(point, otherPoint);
-        //}
-
-        static double DistanceBetween(Point point, Point otherPoint)
-        {
-            var distance = Math.Sqrt((point.X - otherPoint.X) * (point.X - otherPoint.X) + (point.Y - otherPoint.Y) * (point.Y - otherPoint.Y));
-            return distance;
-        }
-
-
         static void Main()
         {
-            Console.WriteLine("Describe a circle");
-            Console.WriteLine("Enter center coordinates");
-            double circleCenterX = ReadDouble("x: ");
-            double circleCenterY = ReadDouble("y: ");
-            double radius = ReadDouble("radius: ");
-            var circleCenter = new Point(circleCenterX, circleCenterY);
+            Circle circle = ReadCircle("Describe a circle");
 
-            Console.WriteLine("Enter click coordinates");
-            double clickPointX = ReadDouble("x: ");
-            double clickPointY = ReadDouble("y: ");
-            var clickPoint = new Point(clickPointX, clickPointY);
+            Point clickPoint = ReadPoint("Enter click coordinates");
 
-            //was the click point on the circle?
-            bool wasClickOnCircle = ( radius >= DistanceBetween(clickPoint, circleCenter) );
-
-            var clickMessage = wasClickOnCircle ?
+            var clickMessage = circle.Contains(clickPoint) ?
                 "Click was on the circle." :
                 "Click happened outside the circle.";
             Console.WriteLine(clickMessage);
 
-            Console.WriteLine("Describe another circle");
-            double otherCircleCenterX = ReadDouble("x: ");
-            double otherCircleCenterY = ReadDouble("y: ");
-            double otherCircleRadius = ReadDouble("radius: ");
-            var otherCircleCenter = new Point(otherCircleCenterX, otherCircleCenterY);
+            Circle otherCircle = ReadCircle("Describe another circle");
 
-            // did the circles collide?
-            bool didTheCirclesCollide = ( radius + otherCircleRadius <= DistanceBetween(circleCenter, otherCircleCenter) );
-
-            var collisionMessage = didTheCirclesCollide ?
+            var collisionMessage = circle.CollidesWith(otherCircle) ?
                 "The circles have collided." :
                 "No collision between the circles.";
             Console.WriteLine(collisionMessage);
@@ -92,6 +51,23 @@ namespace CircleCollisionDetection
             return value;
         }
 
+        static Point ReadPoint (string prompt)
+        {
+            Console.WriteLine(prompt);
+            double x = ReadDouble("x: ");
+            double y = ReadDouble("y: ");
+            var newPoint = new Point(x, y);
+            return newPoint;
+        }
+
+        static Circle ReadCircle(string prompt)
+        {
+            Console.WriteLine(prompt);
+            Point circleCenter = ReadPoint("Enter center coordinates");
+            double radius = ReadDouble("radius: ");
+            return new Circle(circleCenter, radius);
+        }
+
     }
 
     public class Point
@@ -99,10 +75,18 @@ namespace CircleCollisionDetection
         public double X { get; set; }
         public double Y { get; set; }
 
+        public double DistanceTo(Point otherPoint)
+        {
+            return Math.Sqrt((this.X - otherPoint.X) * (this.X - otherPoint.X) + (this.Y - otherPoint.Y) * (this.Y - otherPoint.Y));
+        }
+
         public Point( double x, double y)
         {
-            X = x;
-            Y = y;
+            this.X = x;
+            this.Y = y;
         }
+
+        public Point() { }
+
     }
 }

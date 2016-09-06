@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircleCollisionDetection">
+      <HintPath>..\CircleCollisionDetection\bin\Debug\CircleCollisionDetection.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -50,6 +53,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CircleCollidesWith.cs" />
+    <Compile Include="CircleContainsPoint.cs" />
+    <Compile Include="PointDistanceTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>
