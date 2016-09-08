@@ -51,7 +51,7 @@ namespace HelloWorld
             Console.WriteLine(myName + " has ran " + myKilometers + " kilometers in " + myTime + " hours. It is " + myTruth + " that he's a family man. He takes his brother out for a drink at a bar called Gigis Han. He and his wife are going to have a son. His name will be " + myName + ", just like his father's. " + myName + " dreams to get a diploma from his son saying '" + myName + ", father of the year'.");
 
             Console.ReadKey();
-
+// Console.WriteLine("{0} are {1} de ani. {0} il chema.", name, age);  => Gigi are 24 de ani. Gigi il chema.
 
         }
     }
