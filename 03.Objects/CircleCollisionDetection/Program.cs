@@ -19,10 +19,25 @@ namespace CircleCollisionDetection
             //was the click point on the circle?
             bool wasClickOnCircle = false;//todo
 
-            var clickMessage = wasClickOnCircle ? 
-                "Click was on the circle." :
-                "Click happened outside the circle.";
-            Console.WriteLine(clickMessage);
+            double distance = Math.Sqrt((circleCenterX - clickPointX) * (circleCenterX - clickPointX) + (circleCenterY - clickPointY) * (circleCenterY - clickPointY));
+            //wasClickOnCircle = distance <= radius;
+            
+            if (distance > radius)
+            {
+                Console.WriteLine("Click happened OUTSIDE the circle.");
+            }
+            else if (distance < radius)
+            {
+                Console.WriteLine("Click happened INSIDE the circle.");
+            }
+            else {
+                Console.WriteLine("Click was on the circle");
+            }
+            
+            //var clickMessage = wasClickOnCircle ? 
+            //    "Click was on the circle." :
+            //    "Click happened outside the circle.";
+            //Console.WriteLine(clickMessage);
 
             Console.WriteLine("Describe another circle");
             double otherCircleCenterX = ReadDouble("x: ");
