@@ -44,6 +44,11 @@ namespace CircleCollisionDetection
             return distanceBetweenCenters <= sumCircleRadii;
         }
 
+        /// <summary>
+        /// computes if a circle is contained in the other.
+        /// </summary>
+        /// <param name="otherCircle">the other circle</param>
+        /// <returns>boolean which if true means the circles is contained, if false it isn't</returns>
         public bool Contains(Circle otherCircle)
             {
                 double distanceBetweenCenters = this.Center.DistanceTo(otherCircle.Center);

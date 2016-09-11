@@ -2,34 +2,6 @@
 
 namespace CircleCollisionDetection
 {
-    public class Point
-    {
-        public double X { get; set; }
-        public double Y { get; set; }
-
-        public Point(double x, double y)
-        {
-            X = x;
-            Y = y;
-        }
-
-        public Point()
-        {
-        }
-
-        /// <summary>
-        /// computes the distance to another point.
-        /// </summary>
-        /// <param name="otherPoint">the coordinates of the point</param>
-        /// <returns>the value of the distance between the two points</returns>
-        public double DistanceTo(Point otherPoint)
-        {
-            double distance = Math.Sqrt((this.X - otherPoint.X) * (this.X - otherPoint.X)
-                + (this.Y - otherPoint.Y) * (this.Y - otherPoint.Y));
-            return distance;
-        } 
-    }
-
     class Program
     {
         static void Main()
@@ -90,7 +62,7 @@ namespace CircleCollisionDetection
         /// </summary>
         /// <param name="prompt">message to show when asking for input</param>
         /// <returns>the point object created</returns>
-        static Point ReadPoint(string prompt)
+        private static Point ReadPoint(string prompt)
         {            
             Console.WriteLine(prompt);
             double X = ReadDouble("x: ");
@@ -106,7 +78,7 @@ namespace CircleCollisionDetection
         /// </summary>
         /// <param name="prompt">message to show when asking for input</param>
         /// <returns>the circle object created</returns>
-        static Circle ReadCircle(string prompt)
+        private static Circle ReadCircle(string prompt)
         {
             Console.WriteLine(prompt);
             var circleCenter = ReadPoint("Enter center coordinates");
