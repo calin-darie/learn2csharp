@@ -1,0 +1,6 @@
+﻿1>------ Build started: Project: Gigi, Configuration: Debug Any CPU ------
+1>C:\Users\andreeam\Source\Repos\learn2csharp\Gigi\Gigi\Program.cs(13,17,13,27): warning CS0219: The variable 'kilometers' is assigned but its value is never used
+1>C:\Users\andreeam\Source\Repos\learn2csharp\Gigi\Gigi\Program.cs(14,20,14,24): warning CS0219: The variable 'time' is assigned but its value is never used
+1>C:\Users\andreeam\Source\Repos\learn2csharp\Gigi\Gigi\Program.cs(15,21,15,26): warning CS0219: The variable 'truth' is assigned but its value is never used
+1>  Gigi -> C:\Users\andreeam\Source\Repos\learn2csharp\Gigi\Gigi\bin\Debug\Gigi.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
