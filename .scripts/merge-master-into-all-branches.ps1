@@ -7,6 +7,7 @@ $branches | `
 		  $branch = $_
 			Write-Host "merging master into $branch..."
 			git checkout $branch
+			git pull
 			git merge master
 			if (-not $?) { 
 				Write-Host "An error occured. Solve it, then rerun this script." 

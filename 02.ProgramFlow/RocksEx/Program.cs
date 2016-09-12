@@ -10,7 +10,7 @@ namespace RocksEx
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Type numbers between 1 and 0");
+            Console.WriteLine("Type numbers between 1 and 10");
             int number;
             int product;
             product = 1;
