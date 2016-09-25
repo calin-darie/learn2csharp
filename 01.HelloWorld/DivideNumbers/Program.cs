@@ -17,12 +17,13 @@ namespace DivideNumbers
             #region  Lab 1 / Exercise 2
             Console.WriteLine("Lab 1 / Exercise 2:");
 
-            int quotient, reminder;
+            int quotient = 26 / 7, reminder = 26 % 7;
+            Console.WriteLine("The integer quotient of 26/7 is {0} and the reminder is {1}", quotient, reminder);
+            Console.WriteLine();
 
-            quotient = 26 / 7;
-            reminder = 26 % 7;
-
-            Console.WriteLine("The quotient of 26/7 is {0} and the reminder is {1}", quotient, reminder);
+            double secondQuotient = 26;
+            secondQuotient /= 7;
+            Console.WriteLine($"The real quotient of 26/7 is {secondQuotient}");
             Console.WriteLine();
             #endregion
 
