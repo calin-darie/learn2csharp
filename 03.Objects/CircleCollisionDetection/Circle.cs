@@ -32,8 +32,8 @@ namespace CircleCollisionDetection
 
         public Circle(Point center, double radius)
         {
-            this.Center = center;
-            this.Radius = radius;
+            Center = center;
+            Radius = radius;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace CircleCollisionDetection.UnitTests
     public class CircleContainsCircle
     {
         [TestMethod]
-        public void GivenTwoCircles_CheckFirstContainsSecond_ReturnsFalse()
+        public void GivenOverlappingCircles_Contains_ReturnsFalse()
         {
             var c1 = new Circle
             {

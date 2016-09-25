@@ -26,7 +26,6 @@ namespace CircleCollisionDetection
             Console.ReadKey();
         }
 
-
         /// <summary>
         /// reads a string from the console and tries to parse it as a double. 
         /// if it fails, it retries indefinetly.
@@ -67,26 +66,6 @@ namespace CircleCollisionDetection
             double radius = ReadDouble("radius: ");
             return new Circle(circleCenter, radius);
         }
-
-    }
-
-    public class Point
-    {
-        public double X { get; set; }
-        public double Y { get; set; }
-
-        public double DistanceTo(Point otherPoint)
-        {
-            return Math.Sqrt((this.X - otherPoint.X) * (this.X - otherPoint.X) + (this.Y - otherPoint.Y) * (this.Y - otherPoint.Y));
-        }
-
-        public Point( double x, double y)
-        {
-            this.X = x;
-            this.Y = y;
-        }
-
-        public Point() { }
 
     }
 }
