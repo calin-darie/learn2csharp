@@ -1,41 +1,81 @@
 ﻿using System;
+using System.IO;
 
 namespace CircleCollisionDetection
 {
+    public class Point
+    {
+        public double X { get; set; }
+        public double Y { get; set; }
+
+        public double DistanceTo(Point otherPoint)
+        {
+            var distance = Math.Sqrt((this.X - otherPoint.X) * (this.X - otherPoint.X) +
+                                     (this.Y - otherPoint.Y) * (this.Y - otherPoint.Y));
+            return this.DistanceTo(otherPoint);
+        }
+    }
+
+    public class Circle
+    {
+        public Point Center { get; set; }
+        public double Radius { get; set; }
+
+        public bool ContainsPoint(Point point)
+        {
+            bool wasClickOnCircle = false;
+
+            if (this.Radius <= point.DistanceTo(this.Center))
+            {
+                wasClickOnCircle = true;
+            }
+            else
+            {
+                wasClickOnCircle = false;
+            }
+
+            return wasClickOnCircle;
+        }
+        public bool CollidesWith(Circle other)
+        {
+            double RadiiSum = this.Radius + other.Radius;
+
+            bool didTheCirclesCollide = false;
+
+            if (RadiiSum <= this.Center.DistanceTo(other.Center))
+            {
+                didTheCirclesCollide = true;
+            }
+            else
+            {
+                didTheCirclesCollide = false;
+            }
+            return didTheCirclesCollide;
+        }
+
+
+    }
+
     class Program
     {
         static void Main()
         {
-            Console.WriteLine("Describe a circle");
-            Console.WriteLine("Enter center coordinates");
-            double circleCenterX = ReadDouble("x: ");
-            double circleCenterY = ReadDouble("y: ");
-            double radius = ReadDouble("radius: ");
+            var circle1 = ReadCircle("Enter circle1 coordinates (X/Y/Radius) separated by '/' and after press Enter: ");
 
-            Console.WriteLine("Enter click coordinates");
-            double clickPointX = ReadDouble("x: ");
-            double clickPointY = ReadDouble("y: ");
+            Point clickPoint = ReadPoint("Enter point coordinates (X/Y) separated by '/' and after press Enter: ");
 
-            //was the click point on the circle?
-            bool wasClickOnCircle = false;//todo
-
-            var clickMessage = wasClickOnCircle ? 
+            var clickMessage = circle1.ContainsPoint(clickPoint) ?
                 "Click was on the circle." :
                 "Click happened outside the circle.";
             Console.WriteLine(clickMessage);
 
-            Console.WriteLine("Describe another circle");
-            double otherCircleCenterX = ReadDouble("x: ");
-            double otherCircleCenterY = ReadDouble("y: ");
-            double otherCircleRadius = ReadDouble("radius: ");
+            var circle2 = ReadCircle("Enter circle2 coordinates (X/Y/Radius) separated by '/' and after press Enter: ");
 
-            // did the circles collide?
-            bool didTheCirclesCollide = false;//todo
-            var collisionMessage = didTheCirclesCollide ?
-                "The circles have collided." :
-                "No collision between the circles.";
+            var collisionMessage = circle1.CollidesWith(circle2) ?
+               "The circles have collided." :
+               "No collision between the circles.";
             Console.WriteLine(collisionMessage);
-            
+
             Console.ReadKey();
         }
 
@@ -55,14 +95,46 @@ namespace CircleCollisionDetection
                 Console.Write(prompt);
                 string input = Console.ReadLine();
                 parsed = double.TryParse(input, out value);
-                if (!parsed) 
+                if (!parsed)
                 {
-                    Console.WriteLine("'{0}' can not be converted to a {1}.", input, "double");
+                    Console.WriteLine("{0} can not be converted to a {1}.", input, "double");
                 }
             }
             while (!parsed);
             return value;
         }
+        static Point ReadPoint(string prompt)
+        {
+            // writeline prompt; read x and y; construct a point; return the point you created
+
+            Console.WriteLine("Enter Point coordinates (X/Y) separated by '/' and after press Enter: ");
+            string[] string1 = Console.ReadLine().Split('/');
+            double circleCenterX = ReadDouble(string1[0]);
+            double circleCenterY = ReadDouble(string1[1]);
+
+            var circleCenter = new Point { X = circleCenterX, Y = circleCenterY };
+
+            return circleCenter;
+        }
+
+        static Circle ReadCircle(string prompt)
+        {
+            // writeline prompt; read x and y; construct a point; return the point you created
+
+            Console.WriteLine("Enter Circle coordinates (X/Y/Radius) separated by '/' and after press Enter: ");
+            string[] string2 = Console.ReadLine().Split('/');
+            double circleX = ReadDouble(string2[0]);
+            double circleY = ReadDouble(string2[1]);
+            double radiusC = ReadDouble(string2[2]);
+
+            var point = new Point { X = circleX, Y = circleY };
+            var circleCenter = new Circle { Center = point, Radius = radiusC };
+
+            return circleCenter;
+        }
+
+
+
 
     }
 }
