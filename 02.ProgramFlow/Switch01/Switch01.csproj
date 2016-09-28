@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D3DDCB2C-6C1A-45F0-AC57-19FB4B3F82D6}</ProjectGuid>
+    <ProjectGuid>{B938DEE4-D8EF-4D18-AD53-66279000D9E6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>While01</RootNamespace>
-    <AssemblyName>While01</AssemblyName>
+    <RootNamespace>Switch01</RootNamespace>
+    <AssemblyName>Switch01</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -10,15 +10,43 @@ namespace If01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Your age:");
-            string ageString = Console.ReadLine();
-            int age = int.Parse(ageString);
+            int Age;
+            string Sex;
+            string temporary;
 
-            Console.WriteLine("Your sex:"); //male or female
-            string sex = Console.ReadLine();
+            Console.WriteLine("Please insert your age:");
+            temporary = Console.ReadLine();
+            Age = int.Parse(temporary);
+            Console.WriteLine("Please insert your sex (male/female):");
+            Sex = Console.ReadLine();
 
-            //write here your solution
-
+            if (Sex.ToLower().Equals("male"))
+            {
+                if (Age == 24)
+                {
+                     Console.WriteLine("Valid person");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid person");
+                }
+            }
+            else 
+                if (Sex.ToLower().Equals("female"))
+                {
+                    if ((Age >=20) && (Age <=32))
+                    {
+                     Console.WriteLine("Valid person");
+                    }
+                    else
+                    {
+                       Console.WriteLine("Invalid person");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, no aliens allowed!");
+                }
 
             Console.ReadKey();
         }

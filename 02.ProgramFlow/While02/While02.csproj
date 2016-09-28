@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D3DDCB2C-6C1A-45F0-AC57-19FB4B3F82D6}</ProjectGuid>
+    <ProjectGuid>{EDE44AE3-48DF-4802-9DB9-D01CADFBB6CD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>While01</RootNamespace>
-    <AssemblyName>While01</AssemblyName>
+    <RootNamespace>While02</RootNamespace>
+    <AssemblyName>While02</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

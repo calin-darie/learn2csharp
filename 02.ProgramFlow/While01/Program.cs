@@ -10,16 +10,20 @@ namespace While01
     {
         static void Main(string[] args)
         {
-            int number = int.Parse(Console.ReadLine());
+            string temporary;
+            int Number = 0;
             int i = 0;
 
-            //write your solution
-            //make a while loop
-            /* the condition should be that i is less and equal than number
-            inside the loop print i and increment variable i */
+            Console.WriteLine("Please insert a number (max 100 so we don;t get bored!):");
+            temporary = Console.ReadLine();
+            Number = int.Parse(temporary);
+            while (i < Number)
+            {
+                Console.WriteLine("Here we go (again) {0}", i);
+                i++;
+                /*It will print value "0" in an infinite loop */
+            }
 
-
-            Console.ReadKey();
         }
     }
 }

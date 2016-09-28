@@ -10,15 +10,31 @@ namespace While03
     {
         static void Main(string[] args)
         {
-            Random r = new Random();
-            int generatedNumber = r.Next(100); //random number in range [0-99]
+            int MagicNumber = 44;
+            int Number = 0;
+   
+            while (MagicNumber != Number) 
+            {
+                Console.WriteLine("Please insert a number bewteen 0 and 100:");
+                Number = int.Parse(Console.ReadLine());
 
-            //write your solution here.
-
-
-
-            Console.WriteLine("Congratulations! You guessed the number!");
-            Console.ReadKey();
+                if (Number == MagicNumber)
+                {
+                    Console.WriteLine("Congrats! This was the number");
+                    break;
+                }
+                else
+                {
+                    if (MagicNumber > Number)
+                    {
+                        Console.WriteLine("Magic number is bigger");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Magic number is smaller");
+                    }
+                }
+            }
         }
     }
 }
