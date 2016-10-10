@@ -9,7 +9,7 @@ namespace _02_StringEncryption
     class IOFileWriter
     {
         // writes the string "content" into the file provided as argument
-        void write(String filename, String content)
+        void Write(String filename, String content)
         {
 
         }

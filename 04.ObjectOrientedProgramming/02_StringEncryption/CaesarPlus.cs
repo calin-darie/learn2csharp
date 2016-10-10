@@ -6,11 +6,29 @@ using System.Threading.Tasks;
 
 namespace _02_StringEncryption
 {
-    class CaesarPlus : EncryptionAlgorithm
+    public class CaesarPlus : EncryptionAlgorithm
     {
-        public override string encrypt(string text)
+        public override string Encrypt(string text)
         {
-            return base.encrypt(text);
+            if (text == null)
+            {
+                throw new ArgumentNullException(nameof(text));
+            }
+
+            var reversedText = new StringBuilder();
+            foreach (char c in text)
+            {
+                if(c == 'z')
+                {
+                    reversedText.Append('a');
+                }
+                else
+                {
+                    reversedText.Append((char)(c + 1));
+                }
+            }
+
+            return reversedText.ToString();
         }
     }
 }

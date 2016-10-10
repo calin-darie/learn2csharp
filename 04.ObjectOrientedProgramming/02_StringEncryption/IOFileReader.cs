@@ -10,7 +10,7 @@ namespace _02_StringEncryption
     {
 
         // receives a file path and returns the content of the file into a string
-        String read(String filename)
+        String Read(String filename)
         {
             String fileContent = "";
 

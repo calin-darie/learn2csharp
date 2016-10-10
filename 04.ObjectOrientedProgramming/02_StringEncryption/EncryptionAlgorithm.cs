@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace _02_StringEncryption
 {
-    class EncryptionAlgorithm
+    public class EncryptionAlgorithm
     {
-        public virtual String encrypt(String text)
+        public enum EncryptionType
+        {
+            Plus,
+            Minus
+        }
+
+        public virtual String Encrypt(String text)
         {
 
             return "";
         }
 
-        public virtual String decrypt(String text)
+        public virtual String Decrypt(String text)
         {
 
             return "";

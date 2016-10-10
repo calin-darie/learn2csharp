@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _02_StringEncryption
 {
-    class CaesarMinus : EncryptionAlgorithm
+    public class CaesarMinus : EncryptionAlgorithm
     {
-        public override string encrypt(string text)
+        public override string Encrypt(string text)
         {
-            return base.encrypt(text);
+            return base.Encrypt(text);
         }
     }
 }
