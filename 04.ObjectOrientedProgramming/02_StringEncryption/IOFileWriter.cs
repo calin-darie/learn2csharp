@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _02_StringEncryption
 {
-    class IOFileWriter
+    public static class IOFileWriter
     {
         // writes the string "content" into the file provided as argument
-        void Write(String filename, String content)
+        public static void Write(string filename, string content)
         {
-
+            File.AppendAllText(filename, content);
         }
     }
 }

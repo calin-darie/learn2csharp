@@ -16,11 +16,20 @@ namespace _02_StringEncryption
             }
 
             var reversedText = new StringBuilder();
+
             foreach (char c in text)
             {
-                if(c == 'z')
+                if(c < 33)
+                {
+                    reversedText.Append(c);
+                }
+                else if (c == 'z')
                 {
                     reversedText.Append('a');
+                }
+                else if(c == 'ÿ')  // 'ÿ' is the char with ASCII code 255
+                {
+                    reversedText.Append('!');  // '!' is the first printable char in ASCII
                 }
                 else
                 {

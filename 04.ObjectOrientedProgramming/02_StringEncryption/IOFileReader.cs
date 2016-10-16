@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _02_StringEncryption
 {
-    class IOFileReader
+    public static class IOFileReader
     {
 
         // receives a file path and returns the content of the file into a string
-        String Read(String filename)
+        public static String Read(string filename)
         {
-            String fileContent = "";
-
-            return fileContent;
+            return File.ReadAllText(filename);
         }
     }
 }

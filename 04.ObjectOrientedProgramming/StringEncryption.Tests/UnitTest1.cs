@@ -36,5 +36,25 @@ namespace StringEncryption.Tests
 
             Assert.AreEqual("a", output);
         }
+
+        [TestMethod]
+        public void GivenNonLetters_CaesarPlusReturnsRightChars()
+        {
+            var sut = new CaesarPlus();
+
+            string output = sut.Encrypt(".,190}");
+
+            Assert.AreEqual("/-2:1~", output);
+        }
+        [TestMethod]
+        public void GivenLastAsciiCodeChar_CaesarPlusReturnsFirstPrintableAsciiCodeChar()
+        {
+            var sut = new CaesarPlus();
+
+            string output = sut.Encrypt("ÿ"); // 'ÿ' is the char with ASCII code 255
+
+            // '!' is the first printable char in ASCII and has the code 33.
+            Assert.AreEqual("!", output);
+        }
     }
 }

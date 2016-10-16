@@ -16,13 +16,11 @@ namespace _02_StringEncryption
 
         public virtual String Encrypt(String text)
         {
-
             return "";
         }
 
         public virtual String Decrypt(String text)
         {
-
             return "";
         }
     }
