@@ -48,27 +48,27 @@ namespace CircleCollisionDetection
             double otherCircleCenterY = ReadDouble("y1: ");
             double otherCircleRadius = ReadDouble("radius1: ");
 
-            //// did the circles collide? varianta 1
-            //if (Math.Sqrt((otherCircleCenterX - circleCenterX)*(otherCircleCenterX  - circleCenterX) + (otherCircleCenterY - circleCenterY)*(otherCircleCenterY - circleCenterY)) == (otherCircleRadius + radius))
-            //{
-            //    Console.WriteLine("The two circles are tangentials circles");
-            //}
-            //else if (Math.Sqrt((otherCircleCenterX - circleCenterX)*(otherCircleCenterX  - circleCenterX) + (otherCircleCenterY - circleCenterY)*(otherCircleCenterY - circleCenterY)) > (otherCircleRadius + radius))
-            //{
-            //    Console.WriteLine("The two circles are NOT colliding with each other");
-            //}
-            //else 
-            //{
-            //    Console.WriteLine("The two circles are colliding with each other");
-            //}
+            // did the circles collide? varianta 1
+            if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) == (otherCircleRadius + radius))
+            {
+                Console.WriteLine("The two circles are tangentials circles");
+            }
+            else if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) > (otherCircleRadius + radius))
+            {
+                Console.WriteLine("The two circles are NOT colliding with each other");
+            }
+            else
+            {
+                Console.WriteLine("The two circles are colliding with each other");
+            }
 
             // did the circles collide? varianta 2 doar cu 2 variante
-            var distanceBetweenTheCentersOfCircles= Math.Sqrt((otherCircleCenterX - circleCenterX)*(otherCircleCenterX  - circleCenterX) + (otherCircleCenterY - circleCenterY)*(otherCircleCenterY - circleCenterY));
-            bool didTheCirclesCollide = (distanceBetweenTheCentersOfCircles <= (radius + otherCircleRadius));
-            var collisionMessage = didTheCirclesCollide ?
-                "The circles have collided." :
-                "No collision between the circles.";
-            Console.WriteLine(collisionMessage);
+            //var distanceBetweenTheCentersOfCircles= Math.Sqrt((otherCircleCenterX - circleCenterX)*(otherCircleCenterX  - circleCenterX) + (otherCircleCenterY - circleCenterY)*(otherCircleCenterY - circleCenterY));
+            //bool didTheCirclesCollide = (distanceBetweenTheCentersOfCircles <= (radius + otherCircleRadius));
+            //var collisionMessage = didTheCirclesCollide ?
+            //    "The circles have collided." :
+            //    "No collision between the circles.";
+            //Console.WriteLine(collisionMessage);
             Console.WriteLine("#######################end of ex2##############################");
             
             Console.ReadKey();
