@@ -31,7 +31,7 @@ namespace SwitchOnEnum
                     song = "Vine , vine primavara";
                     break;
                 case Season.Autumn:
-                    song = "toamna in depresie";
+                    song = "Toamna in depresie";
                     break;
                 default:
                     throw new InvalidOperationException("after handling all seasons above, this code becomes unreachable");

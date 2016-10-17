@@ -8,33 +8,48 @@ namespace CircleCollisionDetection
         {
             Console.WriteLine("Describe a circle");
             Console.WriteLine("Enter center coordinates");
-            double circleCenterX = ReadDouble("x: ");
-            double circleCenterY = ReadDouble("y: ");
+            double circleCenterX = ReadDouble("x0: ");
+            double circleCenterY = ReadDouble("y0: ");
             double radius = ReadDouble("radius: ");
 
             Console.WriteLine("Enter click coordinates");
             double clickPointX = ReadDouble("x: ");
             double clickPointY = ReadDouble("y: ");
+            
 
-            //was the click point on the circle?
-            bool wasClickOnCircle = false;//todo
+            //where was the click comparing with the circle?
+            bool wasClickOnCircle = false;
+            if (Math.Sqrt((clickPointX - circleCenterX)*(clickPointX - circleCenterX) + (clickPointY - circleCenterY)*(clickPointY - circleCenterY))== radius)
+            {
+                wasClickOnCircle = true;
+                Console.WriteLine("Your (x,y) click was exactly on the circle");
+            }
+            else if (Math.Sqrt((clickPointX - circleCenterX) * (clickPointX - circleCenterX) + (clickPointY - circleCenterY) * (clickPointY - circleCenterY)) > radius)
+            {
+                Console.WriteLine("Your (x,y) click was outside of the circle");
+            }
+            else 
+            { 
+                wasClickOnCircle = true; 
+                Console.WriteLine("Your (x,y) click was inside of the circle"); 
+            }
 
-            var clickMessage = wasClickOnCircle ? 
-                "Click was on the circle." :
-                "Click happened outside the circle.";
-            Console.WriteLine(clickMessage);
+            //var clickMessage = wasClickOnCircle ? 
+                //"Click was inside the circle." :
+                //"Click happened outside the circle.";
+            //Console.WriteLine(clickMessage);
 
-            Console.WriteLine("Describe another circle");
-            double otherCircleCenterX = ReadDouble("x: ");
-            double otherCircleCenterY = ReadDouble("y: ");
-            double otherCircleRadius = ReadDouble("radius: ");
+            //Console.WriteLine("Describe another circle");
+            //double otherCircleCenterX = ReadDouble("x: ");
+            //double otherCircleCenterY = ReadDouble("y: ");
+            //double otherCircleRadius = ReadDouble("radius: ");
 
             // did the circles collide?
-            bool didTheCirclesCollide = false;//todo
-            var collisionMessage = didTheCirclesCollide ?
-                "The circles have collided." :
-                "No collision between the circles.";
-            Console.WriteLine(collisionMessage);
+            //bool didTheCirclesCollide = false;//todo
+            //var collisionMessage = didTheCirclesCollide ?
+               // "The circles have collided." :
+               // "No collision between the circles.";
+            //Console.WriteLine(collisionMessage);
             
             Console.ReadKey();
         }
