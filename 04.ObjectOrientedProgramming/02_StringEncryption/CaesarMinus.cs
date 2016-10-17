@@ -10,7 +10,16 @@ namespace _02_StringEncryption
     {
         public override string Encrypt(string text)
         {
-            return base.Encrypt(text);
+            var encryptAlgorithm = new CaesarPlus();
+
+            return encryptAlgorithm.Decrypt(text);
+        }
+
+        public override string Decrypt(string text)
+        {
+            var encryptAlgorithm = new CaesarPlus();
+
+            return encryptAlgorithm.Encrypt(text);
         }
     }
 }

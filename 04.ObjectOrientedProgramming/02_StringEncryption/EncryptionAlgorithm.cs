@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _02_StringEncryption
 {
-    public class EncryptionAlgorithm
+    public abstract class EncryptionAlgorithm
     {
         public enum EncryptionType
         {
@@ -14,14 +14,8 @@ namespace _02_StringEncryption
             Minus
         }
 
-        public virtual String Encrypt(String text)
-        {
-            return "";
-        }
+        public abstract string Encrypt(String text);
 
-        public virtual String Decrypt(String text)
-        {
-            return "";
-        }
+        public abstract string Decrypt(String text);
     }
 }

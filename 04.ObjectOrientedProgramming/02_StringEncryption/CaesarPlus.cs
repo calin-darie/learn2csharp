@@ -15,29 +15,71 @@ namespace _02_StringEncryption
                 throw new ArgumentNullException(nameof(text));
             }
 
-            var reversedText = new StringBuilder();
+            var encryptedText = new StringBuilder();
 
             foreach (char c in text)
             {
-                if(c < 33)
+                // firts 32 ASCII characters are not printable, so we keep them as they are
+                if (c < 33)
                 {
-                    reversedText.Append(c);
+                    encryptedText.Append(c);
                 }
                 else if (c == 'z')
                 {
-                    reversedText.Append('a');
+                    encryptedText.Append('a');
                 }
-                else if(c == 'ÿ')  // 'ÿ' is the char with ASCII code 255
+                else if (c == 'Z')
                 {
-                    reversedText.Append('!');  // '!' is the first printable char in ASCII
+                    encryptedText.Append('A');
+                }
+                else if (c == 'ÿ')  // 'ÿ' is the last printable char in ASCII, with code 255
+                {
+                    encryptedText.Append('!');  // '!' is the first printable char in ASCII, with code 33
                 }
                 else
                 {
-                    reversedText.Append((char)(c + 1));
+                    encryptedText.Append((char)(c + 1));
                 }
             }
 
-            return reversedText.ToString();
+            return encryptedText.ToString();
+        }
+
+        public override string Decrypt(string text)
+        {
+            if (text == null)
+            {
+                throw new ArgumentNullException(nameof(text));
+            }
+
+            var decryptedText = new StringBuilder();
+
+            foreach (char c in text)
+            {
+                // firts 32 ASCII characters are not printable, so we keep them as they are
+                if (c < 33)
+                {
+                    decryptedText.Append(c);
+                }
+                else if (c == 'a')
+                {
+                    decryptedText.Append('z');
+                }
+                else if (c == 'A')
+                {
+                    decryptedText.Append('Z');
+                }
+                else if (c == '!')  // '!' is the first printable char in ASCII, with code 33
+                {
+                    decryptedText.Append('ÿ');  // 'ÿ' is the last printable char in ASCII, with code 255
+                }
+                else
+                {
+                    decryptedText.Append((char)(c - 1));
+                }
+            }
+
+            return decryptedText.ToString();
         }
     }
 }
