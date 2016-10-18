@@ -6,7 +6,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Restaurant", "Restaurant\01_Restaurant.csproj", "{4774DE87-867C-4B54-BB39-1A2145292CD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypter", "Crypter\Crypter.csproj", "{920D90BB-E01E-4896-8F63-804D5F3821B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypter.UnitTests", "Crypter.UnitTests\Crypter.UnitTests.csproj", "{7E0C95E6-23FB-404B-8DE9-8A4A4B4B8E68}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4774DE87-867C-4B54-BB39-1A2145292CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4774DE87-867C-4B54-BB39-1A2145292CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4774DE87-867C-4B54-BB39-1A2145292CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4774DE87-867C-4B54-BB39-1A2145292CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{920D90BB-E01E-4896-8F63-804D5F3821B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{920D90BB-E01E-4896-8F63-804D5F3821B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{920D90BB-E01E-4896-8F63-804D5F3821B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{920D90BB-E01E-4896-8F63-804D5F3821B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E0C95E6-23FB-404B-8DE9-8A4A4B4B8E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0C95E6-23FB-404B-8DE9-8A4A4B4B8E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0C95E6-23FB-404B-8DE9-8A4A4B4B8E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0C95E6-23FB-404B-8DE9-8A4A4B4B8E68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
