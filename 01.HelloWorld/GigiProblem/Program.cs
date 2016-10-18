@@ -13,17 +13,15 @@ namespace Gigi
             int kilometers = 10;
             double time = 1.5;
             Boolean truth = true;
+            var name = "Gigi";
 
-            Console.WriteLine("Gigi has ran 10 kilometers in 1.5 hours.");
+            Console.WriteLine("{0} has ran {1} kilometers in {2} hours.", name,kilometers, time);
 
-            Console.WriteLine("It is {true} that Gigi is a family man");
+            Console.WriteLine("It is {0} that {1} is a family man", truth, name);
 
-            Console.WriteLine("His namespace will be Gigi, just like his father's.");
+            Console.WriteLine("His name will be {0}, just like his father's.", name);
 
-            Console.WriteLine("Gigi dreams to get a diploma from his son saying {Gigi father of the year.}");
-
-
-
+            Console.WriteLine("{0} dreams to get a diploma from his son saying {0} father of the year.", name);
 
         }
     }

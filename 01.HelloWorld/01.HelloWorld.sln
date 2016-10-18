@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "division", "division\divisi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigiProblem", "GigiProblem\GigiProblem.csproj", "{84439F93-B179-4309-84BF-EED783696993}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike exercise", "Mike exercise\Mike exercise.csproj", "{2EA1FDA7-BB18-4BFE-86DA-0F34CB87E6DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{84439F93-B179-4309-84BF-EED783696993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84439F93-B179-4309-84BF-EED783696993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84439F93-B179-4309-84BF-EED783696993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA1FDA7-BB18-4BFE-86DA-0F34CB87E6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA1FDA7-BB18-4BFE-86DA-0F34CB87E6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA1FDA7-BB18-4BFE-86DA-0F34CB87E6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA1FDA7-BB18-4BFE-86DA-0F34CB87E6DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,15 +12,19 @@ namespace division
         {
             int divident = 26;
             int divisor = 7;
-             Console.WriteLine (  divident/ divisor);
+            Console.WriteLine(divident / divisor);
 
 
-             double divident2 = 26;
-             double divisor2 = 7;
-             Console.WriteLine(divident2 / divisor2);
+            double divident2 = 26;
+            double divisor2 = 7;
+            Console.WriteLine(divident2 / divisor2);
 
-             Console.WriteLine(divident2 % divisor2);
+            /*Console.WriteLine(divident2 % divisor2);*/
+
+
         }
-        
+
     }
 }
+
+
