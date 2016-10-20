@@ -8,9 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Restaurant", "Exercise1\01_Restaurant.csproj", "{AB587337-85D3-4D7E-B33A-A16D19DBA28D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Restaurant", "01_Restaurant\01_Restaurant.csproj", "{AB587337-85D3-4D7E-B33A-A16D19DBA28D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Caesar", "Ceasar\02_Caesar.csproj", "{481FF7F4-31A0-4011-90D7-B1EBCB47ECFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Caesar", "02_Caesar\02_Caesar.csproj", "{481FF7F4-31A0-4011-90D7-B1EBCB47ECFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caesar.UnitTests", "Caesar.UnitTests\Caesar.UnitTests.csproj", "{633C188F-E11A-4DDF-8EE8-04DA8DEEC621}"
 EndProject

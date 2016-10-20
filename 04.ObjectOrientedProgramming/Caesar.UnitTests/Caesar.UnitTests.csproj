@@ -60,7 +60,7 @@
     <Compile Include="Caesar.Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ceasar\02_Caesar.csproj">
+    <ProjectReference Include="..\02_Caesar\02_Caesar.csproj">
       <Project>{481FF7F4-31A0-4011-90D7-B1EBCB47ECFC}</Project>
       <Name>02_Caesar</Name>
     </ProjectReference>
