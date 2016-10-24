@@ -19,7 +19,6 @@ namespace Crypter
                 using (StreamWriter streamWriter = new StreamWriter(Filename))
                 {
                     streamWriter.Write(Content);
-                    streamWriter.Dispose();
                 }       
             }
 

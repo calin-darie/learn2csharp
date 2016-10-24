@@ -12,7 +12,6 @@ namespace CircleCollisionDetection
         {
             var distance = Math.Sqrt((this.X - otherPoint.X) * (this.X - otherPoint.X) +
                                      (this.Y - otherPoint.Y) * (this.Y - otherPoint.Y));
-           // return this.DistanceTo(otherPoint);
             return distance;
         }
     }
@@ -45,11 +44,11 @@ namespace CircleCollisionDetection
 
             if (RadiiSum <= this.Center.DistanceTo(other.Center))
             {
-                didTheCirclesCollide = true;
+                didTheCirclesCollide = false;
             }
             else
             {
-                didTheCirclesCollide = false;
+                didTheCirclesCollide = true;
             }
             return didTheCirclesCollide;
         }

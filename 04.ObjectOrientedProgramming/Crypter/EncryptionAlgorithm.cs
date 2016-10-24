@@ -33,7 +33,7 @@ namespace Crypter
         }
     }
 
-    class CaesarPlus : EncryptionAlgorithm
+   public class CaesarPlus : EncryptionAlgorithm
     {
         public string StringToIncrement { get; set; }
         
@@ -77,7 +77,7 @@ namespace Crypter
         {
             string result = Cezar.StringToIncrement;
             string temp = "";
-            for (int i = 0; i < 255; i++) //asa l-as folosi daca ar si merge ok, 255 nu e correct but hey, algoritmul asa l-as face..i need help here!!!!
+            for (int i = 0; i < 65535; i++) //pt 65535 vezi Unittestul TestForCaesarMinusReloaded
             {
                 temp = Cezar.Increment(result);
                 result = temp;

@@ -40,7 +40,7 @@ namespace Crypter
 
         static void Main(string[] args)
         {
-/*Test using CezarMinus
+/*Test using CezarMinus*/
             string Initial = "ABCDEFGHIJK";
             string myInputFile = "M:\\T1.txt";
             string myOutputFile = "M:\\T2.txt";
@@ -55,8 +55,10 @@ namespace Crypter
             
             string MyContent = myReader.ReadFromFile(myOutputFile);
             Program.DecryptFile(myOutputFile, myVerificationFile, EncryptionAlgorithm.EncryptionType.Minus);
- */
-            string Initial = "CDE";
+
+
+/*Test using CezarMinusReloaded  
+            string Initial = "DEFGH";
 
             CaesarPlus myCezar = new CaesarPlus();
             myCezar.StringToIncrement = Initial;
@@ -66,7 +68,7 @@ namespace Crypter
             string newMyContent = myAlgCezar.Decrement(myCezar);
 
             Console.WriteLine("{0} - {1}", myCezar.StringToIncrement, newMyContent);
-          
+*/
 
             Console.ReadLine();
         }

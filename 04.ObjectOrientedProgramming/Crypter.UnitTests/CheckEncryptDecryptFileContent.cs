@@ -51,5 +51,6 @@ namespace Crypter.UnitTests
             Assert.AreEqual("ABCD", MyContent);
         }
 
-    }
+
+     }
 }

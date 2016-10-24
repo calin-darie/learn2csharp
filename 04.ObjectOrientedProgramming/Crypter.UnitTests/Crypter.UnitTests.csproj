@@ -73,6 +73,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CheckEncryptDecryptStrings.cs" />
     <Compile Include="CornerCases.cs" />
+    <Compile Include="TestforCaesarMinusReloaded.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crypter\Crypter.csproj">

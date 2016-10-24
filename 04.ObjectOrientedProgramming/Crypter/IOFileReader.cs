@@ -19,7 +19,6 @@ namespace Crypter
                 using (StreamReader streamReader = new StreamReader(Filename, Encoding.ASCII))
                 {
                     result = streamReader.ReadToEnd();
-                    streamReader.Dispose();
                 }
                
             }
