@@ -7,41 +7,14 @@ namespace CircleCollisionDetection
         static void Main()
         {   //in static void main am ce se executa; in afara ei dar totusi in program se pun restul metodelor
             //ex1
-            Console.WriteLine("Describe the initial circle");
-            Console.WriteLine("Enter center coordinates for initial circle");
-            double circleCenterX = ReadDouble("x0: ");
-            double circleCenterY = ReadDouble("y0: ");
+
+            Point circleCenter = ReadPoint("Enter center coordinates for initial circle");
             double radius = ReadDouble("radiusinItialCircle: ");
+            
+            Point clickPoint = ReadPoint("Enter click coordinates of the click");
 
-            Console.WriteLine("Enter click coordinates of the click");
-            double clickPointX = ReadDouble("xclick: ");
-            double clickPointY = ReadDouble("yclick: ");
-
-            //clasa e un template pt obiecte; obiectele apar cand faci new pe obiectele respective= instantiere a clasei sau cerare a obiectului
-            var circleCenter = new Point 
-                { 
-                    X = circleCenterX, 
-                    Y = circleCenterY
-                };//intre acolade am initializare
-            //var clickPoint= new Point {X= clickPointX, Y= clickPointY};//asta e varianta in care nu am definit construvctor in clasa Point; si asta si urmatoarea linie sunt valide
-            var clickPoint = new Point(clickPointX, clickPointY);//aici apelez cosntructorul din clasa Point pt a crea un obiect de tip point
-
-            //where was the click comparing with the circle?-varianta 1
-            // var distance1 = DistanceBetweenPoints (clickPointX, clickPointY, circleCenterX, circleCenterY  )
-            //if (distance1 == radius)
-            //{
-            //    Console.WriteLine("Your (x,y) click was exactly on the circle");
-            //}
-            //else if (distance1 > radius)
-            //{
-            //    Console.WriteLine("Your (x,y) click was outside of the circle");
-            //}
-            //else 
-            //{ 
-            //    Console.WriteLine("Your (x,y) click was inside of the circle"); 
-            //}
-
-            //where was the click comparing with the circle?-varianta 2 care verifica doar 2 varinate nu 3 ca cea anterioara
+            
+            //where was the click comparing with the circle?-varianta 2 care verifica doar 2 varinate 
             var distance1 = circleCenter.DistanceTo(clickPoint);
             bool wasClickOnCircle = (distance1 <= radius);//asociez lui wasClickOnCircle valoarea de adevar din comparatia dintre distanta si radius
             var clickMessage = wasClickOnCircle ? //daca e adevarata linia anterioara, lui clickMessage i se va asocia stringul de pe linia imediat urmatoare; altfel i se asociaza stringul de pe a doua linie urmatoare
@@ -52,24 +25,24 @@ namespace CircleCollisionDetection
 
 
             //ex 2
-            Console.WriteLine("Describe another circle");
-            double otherCircleCenterX = ReadDouble("xanothercircle: ");
-            double otherCircleCenterY = ReadDouble("yanothercircle: ");
-            double otherCircleRadius = ReadDouble("radiusAnotherCircle: ");
+            //Console.WriteLine("Describe another circle");
+            //double otherCircleCenterX = ReadDouble("xanothercircle: ");
+            //double otherCircleCenterY = ReadDouble("yanothercircle: ");
+            //double otherCircleRadius = ReadDouble("radiusAnotherCircle: ");
 
-            // did the circles collide? varianta 1
-            if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) == (otherCircleRadius + radius))
-            {
-                Console.WriteLine("The two circles are tangentials circles");
-            }
-            else if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) > (otherCircleRadius + radius))
-            {
-                Console.WriteLine("The two circles are NOT colliding with each other");
-            }
-            else
-            {
-                Console.WriteLine("The two circles are colliding with each other");
-            }
+            //// did the circles collide? varianta 1
+            //if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) == (otherCircleRadius + radius))
+            //{
+            //    Console.WriteLine("The two circles are tangentials circles");
+            //}
+            //else if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) > (otherCircleRadius + radius))
+            //{
+            //    Console.WriteLine("The two circles are NOT colliding with each other");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The two circles are colliding with each other");
+            //}
 
             // did the circles collide? varianta 2 doar cu 2 variante
             //var distanceBetweenTheCentersOfCircles= Math.Sqrt((otherCircleCenterX - circleCenterX)*(otherCircleCenterX  - circleCenterX) + (otherCircleCenterY - circleCenterY)*(otherCircleCenterY - circleCenterY));
@@ -106,6 +79,20 @@ namespace CircleCollisionDetection
             }
             while (!parsed);
             return value;
+        }
+
+        private static Point ReadPoint(string consoleInput)
+        {
+            //Console.WriteLine("Describe the initial circle");
+            Console.WriteLine(consoleInput);
+            double clickPointX = ReadDouble("xclick: ");
+            double clickPointY = ReadDouble("yclick: ");
+            var givenPoint = new Point
+            {
+                X = clickPointX,
+                Y = clickPointY
+            };
+            return givenPoint;
         }
 
         //alta metoda outside static main
