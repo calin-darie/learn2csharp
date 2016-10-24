@@ -7,7 +7,7 @@ namespace CircleCollisionDetection.UnitTests
     public class PointDistanceTo
     {
         [TestMethod]
-        public void GoldenTriangle_GivenDeltaX3AndDeltaY4_DistanceTo_Returns5()
+        public void GoldenTriangle_GivenDeltaX3AndDeltaY4_DistanceTo_Return5s()
         {
             var p1 = new Point { X = 0, Y = 0 };
             var p2 = new Point { X = 3, Y = 4 };

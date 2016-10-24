@@ -5,8 +5,7 @@ namespace CircleCollisionDetection
     class Program
     {
         static void Main()
-        {
-            //ex1
+        {   //ex1
             Console.WriteLine("Describe a circle");
             Console.WriteLine("Enter center coordinates");
             double circleCenterX = ReadDouble("x0: ");
@@ -19,11 +18,12 @@ namespace CircleCollisionDetection
             
 
             //where was the click comparing with the circle?-varianta 1
-            //if (Math.Sqrt((clickPointX - circleCenterX)*(clickPointX - circleCenterX) + (clickPointY - circleCenterY)*(clickPointY - circleCenterY))== radius)
+            // var distance1 = DistanceBetweenPoints (clickPointX, clickPointY, circleCenterX, circleCenterY  )
+            //if (distance1 == radius)
             //{
             //    Console.WriteLine("Your (x,y) click was exactly on the circle");
             //}
-            //else if (Math.Sqrt((clickPointX - circleCenterX) * (clickPointX - circleCenterX) + (clickPointY - circleCenterY) * (clickPointY - circleCenterY)) > radius)
+            //else if (distance1 > radius)
             //{
             //    Console.WriteLine("Your (x,y) click was outside of the circle");
             //}
@@ -33,8 +33,8 @@ namespace CircleCollisionDetection
             //}
 
             //where was the click comparing with the circle?-varianta 2 care verifica doar 2 varinate nu 3 ca cea anterioara
-            var distanta = Math.Sqrt((clickPointX - circleCenterX) * (clickPointX - circleCenterX) + (clickPointY - circleCenterY) * (clickPointY - circleCenterY));
-            bool wasClickOnCircle = (distanta <= radius);//asociez lui wasClickOnCircle valoarea de adevar din comparatia dintre distanta si radius
+            var distance1 = DistanceBetweenPoints(clickPointX, clickPointY, circleCenterX, circleCenterY);
+            bool wasClickOnCircle = (distance1 <= radius);//asociez lui wasClickOnCircle valoarea de adevar din comparatia dintre distanta si radius
             var clickMessage = wasClickOnCircle ? //daca e adevarata linia anterioara, lui clickMessage i se va asocia stringul de pe linia imediat urmatoare; altfel i se asociaza stringul de pe a doua linie urmatoare
                 "Click was inside the circle." :
                 "Click happened outside the circle.";
@@ -99,5 +99,11 @@ namespace CircleCollisionDetection
             return value;
         }
 
+        
+        static double DistanceBetweenPoints(double pointX, double pointY, double otherPointX, double otherPointY)
+        {
+            var distance = Math.Sqrt((pointX - otherPointX)*(pointX - otherPointX) + (pointY - otherPointY)*(pointY - otherPointY));
+            return distance;
+        }
     }
-}
+}     
