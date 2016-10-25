@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchOnEnum", "SwitchOnEnu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "If02", "ConsoleApplication1\If02.csproj", "{A35807A4-272C-4916-86E9-D51B12AD0D1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "While02", "While02\While02.csproj", "{2865A66E-F893-44A0-B548-5B1E2D847665}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{A35807A4-272C-4916-86E9-D51B12AD0D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A35807A4-272C-4916-86E9-D51B12AD0D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A35807A4-272C-4916-86E9-D51B12AD0D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2865A66E-F893-44A0-B548-5B1E2D847665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2865A66E-F893-44A0-B548-5B1E2D847665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2865A66E-F893-44A0-B548-5B1E2D847665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2865A66E-F893-44A0-B548-5B1E2D847665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
