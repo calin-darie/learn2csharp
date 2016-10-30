@@ -23,5 +23,13 @@
                 return "Error: cannot write to file. Please check if path is correct.";
             }
         }
+
+        public static string IncorrectEncryptionType
+        {
+            get
+            {
+                return "Incorrect encryption type; must be Plus or Minus!";
+            }
+        }
     }
 }

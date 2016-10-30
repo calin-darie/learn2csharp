@@ -18,20 +18,27 @@ namespace Caesar
         /// <returns></returns>
         public static void EncryptFile(string inputFile, string outputFile, EncryptionAlgorithm.EncryptionType encryptionType)
         {
-            string text = IOFileReader.Read(inputFile);
-            switch (encryptionType)
+            string text = "";
+            if (IOFileReader.TryRead(inputFile, out text))
             {
-                case EncryptionAlgorithm.EncryptionType.Plus:
-                    EncryptionAlgorithm plus = new CaesarPlus();
-                    IOFileWriter.Write(outputFile, plus.encrypt(text));
-                    break;
-                case EncryptionAlgorithm.EncryptionType.Minus:
-                    EncryptionAlgorithm minus = new CaesarMinus();
-                    IOFileWriter.Write(outputFile, minus.encrypt(text));
-                    break;
-                default:
-                    Console.WriteLine("Incorrect encryption type; must be Plus or Minus!");
-                    break;
+                switch (encryptionType)
+                {
+                    case EncryptionAlgorithm.EncryptionType.Plus:
+                        EncryptionAlgorithm plus = new CaesarPlus();
+                        IOFileWriter.TryWrite(outputFile, plus.encrypt(text));
+                        break;
+                    case EncryptionAlgorithm.EncryptionType.Minus:
+                        EncryptionAlgorithm minus = new CaesarMinus();
+                        IOFileWriter.TryWrite(outputFile, minus.encrypt(text));
+                        break;
+                    default:
+                        Console.WriteLine(Ceasar.ErrorMessage.IncorrectEncryptionType);
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine(Ceasar.ErrorMessage.CannotReadFromFile);
             }
         }
 
@@ -44,20 +51,27 @@ namespace Caesar
         /// <returns></returns>
         public static void DecryptFile(string inputFile, string outputFile, EncryptionAlgorithm.EncryptionType encryptionType)
         {
-            string text = IOFileReader.Read(inputFile);
-            switch (encryptionType)
+            string text = "";
+            if (IOFileReader.TryRead(inputFile, out text))
             {
-                case EncryptionAlgorithm.EncryptionType.Plus:
-                    EncryptionAlgorithm plus = new CaesarPlus();
-                    IOFileWriter.Write(outputFile, plus.decrypt(text));
-                    break;
-                case EncryptionAlgorithm.EncryptionType.Minus:
-                    EncryptionAlgorithm minus = new CaesarMinus();
-                    IOFileWriter.Write(outputFile, minus.decrypt(text));
-                    break;
-                default:
-                    Console.WriteLine("Incorrect decryption type; must be Plus or Minus!");
-                    break;
+                switch (encryptionType)
+                {
+                    case EncryptionAlgorithm.EncryptionType.Plus:
+                        EncryptionAlgorithm plus = new CaesarPlus();
+                        IOFileWriter.TryWrite(outputFile, plus.decrypt(text));
+                        break;
+                    case EncryptionAlgorithm.EncryptionType.Minus:
+                        EncryptionAlgorithm minus = new CaesarMinus();
+                        IOFileWriter.TryWrite(outputFile, minus.decrypt(text));
+                        break;
+                    default:
+                        Console.WriteLine(Ceasar.ErrorMessage.IncorrectEncryptionType);
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine(Ceasar.ErrorMessage.CannotReadFromFile);
             }
         }
     }     

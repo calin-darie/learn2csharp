@@ -6,20 +6,23 @@ namespace Caesar
     static class IOFileReader
     {
         /// <summary>
-        /// reads text from a specified file.
+        /// tries to read the text from a specified file
+        /// if it succeeds, it outputs the content of the file
         /// </summary>
         /// <param name="fileName">the full file path</param>
-        /// <returns>the content of the file as string</returns>
-        public static string Read(string fileName)
+        /// <param name="content">the content of the file</param>
+        /// <returns>true or false; when true, content of the file is outputed; when false, output is empty string</returns>
+        public static bool TryRead(string fileName, out string content)
         {
-            if (!String.IsNullOrEmpty(fileName) && File.Exists(fileName))
+            try
             {
-                string text = System.IO.File.ReadAllText(fileName);
-                return text;
+                content = File.ReadAllText(fileName);
+                return true;
             }
-            else
+            catch (Exception)
             {
-                return Ceasar.ErrorMessage.CannotReadFromFile;
+                content = "";
+                return false;
             }
         }
     }
