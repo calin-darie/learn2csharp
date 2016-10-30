@@ -1,10 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Caesar;
 
 namespace Caesar.UnitTests
 {
     [TestClass]
-    public class CaesarTests
+    public class CaesarUnitTests
     {
         private CaesarPlus plus = new CaesarPlus();
         string error = Ceasar.ErrorMessage.IsNullOrEmptyErrorMessage;

@@ -7,7 +7,7 @@ namespace _01_Restaurant
         static void Main(string[] args)
         {
             //Which classes have a relationship of has-a and which classes have a relationship of is-a?
-            //MenuItem has a Beverage and a Snack
+            //Menu has a list of MenuItems
             //Snack is a MenuItem
             //Beverage is a MenuItem
 
