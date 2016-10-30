@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Caesar
 {
-    static class IOFileReader
+    public static class IOFileReader
     {
         /// <summary>
         /// tries to read the text from a specified file

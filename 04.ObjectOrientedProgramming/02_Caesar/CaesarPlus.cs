@@ -44,7 +44,7 @@ namespace Caesar
             }
             else
             {
-                return Ceasar.ErrorMessage.IsNullOrEmptyErrorMessage;
+                return Caesar.ErrorMessage.IsNullOrEmptyErrorMessage;
             }
         }
 
@@ -66,7 +66,7 @@ namespace Caesar
             }
             else
             {
-                return Ceasar.ErrorMessage.IsNullOrEmptyErrorMessage;
+                return Caesar.ErrorMessage.IsNullOrEmptyErrorMessage;
             }
         }
     }

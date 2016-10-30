@@ -6,7 +6,7 @@ namespace Caesar.UnitTests
     public class CaesarUnitTests
     {
         private CaesarPlus plus = new CaesarPlus();
-        string error = Ceasar.ErrorMessage.IsNullOrEmptyErrorMessage;
+        string error = Caesar.ErrorMessage.IsNullOrEmptyErrorMessage;
 
         [TestMethod]
         public void GivenCharacterA_WhenGetCharacterWithPlus_ThenCharacterBIsReturned()

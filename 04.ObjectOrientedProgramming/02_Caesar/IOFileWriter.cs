@@ -20,7 +20,7 @@ namespace Caesar
             }
             catch (Exception)
             {
-                Console.WriteLine(Ceasar.ErrorMessage.CannotWriteToFile);
+                Console.WriteLine(Caesar.ErrorMessage.CannotWriteToFile);
                 return false;
             }
         }

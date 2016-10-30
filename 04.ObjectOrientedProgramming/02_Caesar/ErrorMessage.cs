@@ -1,4 +1,4 @@
-﻿namespace Ceasar
+﻿namespace Caesar
 {
     public class ErrorMessage
     {
@@ -9,6 +9,7 @@
                 return "Error: input is null or empty";
             }
         }
+
         public static string CannotReadFromFile
         {
             get
@@ -16,6 +17,7 @@
                 return "Error: cannot read from file. Please check if the file exists.";
             }
         }
+
         public static string CannotWriteToFile
         {
             get

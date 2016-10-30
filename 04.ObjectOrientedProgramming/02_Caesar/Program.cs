@@ -32,13 +32,13 @@ namespace Caesar
                         IOFileWriter.TryWrite(outputFile, minus.encrypt(text));
                         break;
                     default:
-                        Console.WriteLine(Ceasar.ErrorMessage.IncorrectEncryptionType);
+                        Console.WriteLine(ErrorMessage.IncorrectEncryptionType);
                         break;
                 }
             }
             else
             {
-                Console.WriteLine(Ceasar.ErrorMessage.CannotReadFromFile);
+                Console.WriteLine(ErrorMessage.CannotReadFromFile);
             }
         }
 
@@ -65,13 +65,13 @@ namespace Caesar
                         IOFileWriter.TryWrite(outputFile, minus.decrypt(text));
                         break;
                     default:
-                        Console.WriteLine(Ceasar.ErrorMessage.IncorrectEncryptionType);
+                        Console.WriteLine(ErrorMessage.IncorrectEncryptionType);
                         break;
                 }
             }
             else
             {
-                Console.WriteLine(Ceasar.ErrorMessage.CannotReadFromFile);
+                Console.WriteLine(ErrorMessage.CannotReadFromFile);
             }
         }
     }     
