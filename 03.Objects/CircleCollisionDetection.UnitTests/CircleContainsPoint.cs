@@ -15,7 +15,7 @@ namespace CircleCollisionDetection.UnitTests
             };
             var point = new Point { X=  100, Y = 100 };
 
-            var circleContainsPoint = circle.Contains(point);
+            var circleContainsPoint = circle.ContainsPoint(point);
 
             Assert.IsTrue(circleContainsPoint);
         }
@@ -30,7 +30,7 @@ namespace CircleCollisionDetection.UnitTests
             };
             var point = new Point { X=  1, Y = 8 };
 
-            var circleContainsPoint = circle.Contains(point);
+            var circleContainsPoint = circle.ContainsPoint(point);
 
             Assert.IsTrue(circleContainsPoint);
         }
@@ -45,7 +45,7 @@ namespace CircleCollisionDetection.UnitTests
             };
             var point = new Point { X=  5, Y = 1 };
 
-            var circleContainsPoint = circle.Contains(point);
+            var circleContainsPoint = circle.ContainsPoint(point);
 
             Assert.IsFalse(circleContainsPoint);
         }
@@ -60,7 +60,7 @@ namespace CircleCollisionDetection.UnitTests
             };
             var point = new Point { X = 11, Y = 1 };
 
-            var circleContainsPoint = circle.Contains(point);
+            var circleContainsPoint = circle.ContainsPoint(point);
 
             Assert.IsTrue(circleContainsPoint);
         }

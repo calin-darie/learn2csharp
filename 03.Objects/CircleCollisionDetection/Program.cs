@@ -5,13 +5,20 @@ namespace CircleCollisionDetection
     class Program
     {//in clasa program pun toate metodele
         static void Main()
-        {   //in static void main am ce se executa; in afara ei dar totusi in program se pun restul metodelor
+        {   //in static void main method am ce se executa; in afara ei dar totusi in program se pun restul metodelor
             //ex1
-
+            Circle circle = new Circle();//fac un cerc cu parametrii din clasa circle: centru si radius
             Point circleCenter = ReadPoint("Enter center coordinates for initial circle");
             double radius = ReadDouble("radiusinItialCircle: ");
-            
+
+            circle.Center = circleCenter;
+            circle.Radius = radius;
+
             Point clickPoint = ReadPoint("Enter click coordinates of the click");
+
+            circle.ContainsPoint(clickPoint);
+
+            
 
             
             //where was the click comparing with the circle?-varianta 2 care verifica doar 2 varinate 
@@ -25,34 +32,28 @@ namespace CircleCollisionDetection
 
 
             //ex 2
-            //Console.WriteLine("Describe another circle");
-            //double otherCircleCenterX = ReadDouble("xanothercircle: ");
-            //double otherCircleCenterY = ReadDouble("yanothercircle: ");
-            //double otherCircleRadius = ReadDouble("radiusAnotherCircle: ");
+            // did the circles collide? varianta 1
+            Console.WriteLine("Describe another circle");
+            Point otherPoint = ReadPoint("Enter center coordinates for other point");
+            double otherCircleRadius = ReadDouble("radiusAnotherCircle: ");
+            var distance = circleCenter.DistanceTo(otherPoint);
+            var radius_sum = otherCircleRadius + radius;
 
-            //// did the circles collide? varianta 1
-            //if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) == (otherCircleRadius + radius))
-            //{
-            //    Console.WriteLine("The two circles are tangentials circles");
-            //}
-            //else if (Math.Sqrt((otherCircleCenterX - circleCenterX) * (otherCircleCenterX - circleCenterX) + (otherCircleCenterY - circleCenterY) * (otherCircleCenterY - circleCenterY)) > (otherCircleRadius + radius))
-            //{
-            //    Console.WriteLine("The two circles are NOT colliding with each other");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("The two circles are colliding with each other");
-            //}
+            if (distance == radius_sum)
+            {
+                Console.WriteLine("The two circles are tangentials circles");
+            } 
+            else if (distance > radius_sum)
+            {
+                Console.WriteLine("The two circles are NOT colliding with each other");
+            }
+            else
+            {
+                Console.WriteLine("The two circles are colliding with each other");
+            }
 
-            // did the circles collide? varianta 2 doar cu 2 variante
-            //var distanceBetweenTheCentersOfCircles= Math.Sqrt((otherCircleCenterX - circleCenterX)*(otherCircleCenterX  - circleCenterX) + (otherCircleCenterY - circleCenterY)*(otherCircleCenterY - circleCenterY));
-            //bool didTheCirclesCollide = (distanceBetweenTheCentersOfCircles <= (radius + otherCircleRadius));
-            //var collisionMessage = didTheCirclesCollide ?
-            //    "The circles have collided." :
-            //    "No collision between the circles.";
-            //Console.WriteLine(collisionMessage);
             Console.WriteLine("#######################end of ex2##############################");
-            
+
             Console.ReadKey();
         }//aici se iese din main
 
@@ -72,7 +73,7 @@ namespace CircleCollisionDetection
                 Console.Write(prompt);
                 string input = Console.ReadLine();
                 parsed = double.TryParse(input, out value);
-                if (!parsed) 
+                if (!parsed)
                 {
                     Console.WriteLine("'{0}' can not be converted to a {1}.", input, "double");
                 }
@@ -95,18 +96,10 @@ namespace CircleCollisionDetection
             return givenPoint;
         }
 
-        //alta metoda outside static main
-        /// <summary>
-        /// calculates the distance between two points
-        /// return distance; to test this use the method of the triangle: 3, 4, 5
-        /// </summary>
-        /// <returns></returns>     
-        //static double DistanceBetweenPoints(double pointX, double pointY, double otherPointX, double otherPointY)
+        //static bool IsPointInCircle(Point point, Point circleCenter, double circleRadius)
         //{
-        //    var distance = Math.Sqrt((pointX - otherPointX)*(pointX - otherPointX) + (pointY - otherPointY)*(pointY - otherPointY));
-        //    return distance;
+        //    return point.DistanceTo(circleCenter) < circleRadius;
         //}
 
-       
     }// aici se iese din program
 }  //aici se iese din namespace   

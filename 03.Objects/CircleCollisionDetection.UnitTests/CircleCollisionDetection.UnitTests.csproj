@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CircleContainsPoint.cs" />
     <Compile Include="PointDistanceTo.cs">
       <SubType>Code</SubType>
     </Compile>
