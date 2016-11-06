@@ -28,7 +28,8 @@ namespace GeneratedTestData
              * ...
              */
 
-            var customers = A.ListOf<Customer>();
+            int noCustomers = 25;
+            var customers = A.ListOf<Customer>(noCustomers);
 
             foreach (var customer in customers)
             {
