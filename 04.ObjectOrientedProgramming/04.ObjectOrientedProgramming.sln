@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Caesar", "02_Caesar\02_C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caesar.UnitTests", "Caesar.UnitTests\Caesar.UnitTests.csproj", "{633C188F-E11A-4DDF-8EE8-04DA8DEEC621}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caesar.Specs", "Caesar.Specs\Caesar.Specs.csproj", "{BC8DAE3B-B7E4-48EA-A77F-C86E22667C2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{633C188F-E11A-4DDF-8EE8-04DA8DEEC621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{633C188F-E11A-4DDF-8EE8-04DA8DEEC621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{633C188F-E11A-4DDF-8EE8-04DA8DEEC621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC8DAE3B-B7E4-48EA-A77F-C86E22667C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8DAE3B-B7E4-48EA-A77F-C86E22667C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8DAE3B-B7E4-48EA-A77F-C86E22667C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8DAE3B-B7E4-48EA-A77F-C86E22667C2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
