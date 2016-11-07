@@ -1,14 +1,35 @@
 ﻿using System;
+using System.Linq;
 
 namespace MathExtensions
 {
     public static class MathEx
     {
-        /*todo: use the params keyword to make this function variadic
-         * that is, make it take a variable number of arguments */
-        public static double Min(params double[] numebrs)//double a, double b, double c, double d)
+        public static double Min(params double[] numbers)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return numbers.Min();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return 0;
+            }
+        }
+
+        public static double Max(params double[] numbers)
+        {
+            try
+            {
+                return numbers.Max();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return 0;
+            }
+
         }
     }
 }
