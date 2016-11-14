@@ -10,15 +10,18 @@ namespace While02
     {
         static void Main(string[] args)
         {
-            int i;
-            i = 0;          
-            do
+            int number;
+            var total = 0;
+                  
+            do 
             {
-                int number = int.Parse(Console.ReadLine());
+               
+                number = int.Parse(Console.ReadLine());
+                total = total + number;
             }
-            while (i != 0);
-           
-            Console.WriteLine();
+            while (number != 0);
+
+            Console.WriteLine("sum is {0}", total);
 
             Console.ReadKey();
 

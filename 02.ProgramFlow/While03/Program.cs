@@ -13,11 +13,47 @@ namespace While03
             Random r = new Random();
             int generatedNumber = r.Next(100); //random number in range [0-99]
 
-            //write your solution here.
+           int guessedNumber = 0;
+            // guessedNumber =int.Parse(Console.ReadLine());
+
+            // if (guessedNumber > generatedNumber)
+            // {
+            //     Console.WriteLine("Generated number is smaller");
+            // }
+
+            // if (guessedNumber < generatedNumber)
+            // {
+            //     Console.WriteLine("Generated number is bigger");
+            // }
+
+            Console.WriteLine("Guess a number");        
+
+            do
+            {
+                guessedNumber = int.Parse(Console.ReadLine());
+
+                if (guessedNumber > generatedNumber)
+                {
+                    Console.WriteLine("Generated number is smaller");
+                    Console.WriteLine("Guess again");
+                }
+
+                if (guessedNumber < generatedNumber)
+                {
+                    Console.WriteLine("Generated number is bigger");
+                    Console.WriteLine("Guess again");
+
+                }
+                
+            }
+            while (generatedNumber != guessedNumber);
+
+
+                //write your solution here.
 
 
 
-            Console.WriteLine("Congratulations! You guessed the number!");
+                Console.WriteLine("Congratulations! You guessed the number!");
             Console.ReadKey();
         }
     }
