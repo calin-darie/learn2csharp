@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "while02", "while02\while02.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocksEx", "RocksEx\RocksEx.csproj", "{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "For01", "For01\For01.csproj", "{A2F301D8-C190-4301-94A4-1A67F7EB4789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AA729AD-1EA5-4DCD-B5D8-C40C35CF5741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F301D8-C190-4301-94A4-1A67F7EB4789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F301D8-C190-4301-94A4-1A67F7EB4789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F301D8-C190-4301-94A4-1A67F7EB4789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F301D8-C190-4301-94A4-1A67F7EB4789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
