@@ -51,6 +51,36 @@ Something the .NET team has never given priority to is writing such an overload 
 We can fix this :)
 Write some unit tests for MathEx.Min / Max.
 
+Sample usage of of params[], from MSDN https://msdn.microsoft.com/en-us/library/w5zay9db.aspx
+        public static void UseParams(params int[] list)
+        {
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.Write(list[i] + " ");
+            }
+            Console.WriteLine();
+        }
+            
+		// You can send a comma-separated list of arguments of the 
+		// specified type.
+		UseParams(1, 2, 3, 4);
+
+		// A params parameter accepts zero or more arguments.
+		// The following calling statement displays only a blank line.
+		UseParams();
+
+		// An array argument can be passed, as long as the array
+		// type matches the parameter type of the method being called.
+		int[] myIntArray = { 5, 6, 7, 8, 9 };
+		UseParams(myIntArray);
+		
+	/*
+    Output:
+        1 2 3 4
+               
+        5 6 7 8 9
+    */
+
 * read the stackOverflow answers when you're either done or stuck:
 http://stackoverflow.com/questions/6800838/in-c-sharp-is-there-a-method-to-find-the-max-of-3-numbers
 http://stackoverflow.com/questions/9713390/why-arent-cs-math-min-max-variadic
@@ -77,6 +107,7 @@ The dictionary is supposedly faster.
 Just how faster? Write the performance test output in a comment. 
 
 
+Note: Queues and Stacks below are optional.
 
 Queues 
 first in, first out
