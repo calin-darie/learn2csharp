@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GenFu;
+using System;
 
 namespace GeneratedTestData
 {
@@ -27,7 +28,19 @@ namespace GeneratedTestData
              * ...
              */
 
+            var customers = A.ListOf<Customer>();
 
+            foreach(Customer customer in customers)
+            {
+                Console.WriteLine();
+                Console.WriteLine(customer.FirstName);
+                Console.WriteLine(customer.LastName);
+                Console.WriteLine(customer.BirthDate);
+                Console.WriteLine(customer.Email);
+                Console.WriteLine(customer.Address);
+                Console.WriteLine("=================================");
+                Console.WriteLine();
+            }
         }
 
         public class Customer
@@ -38,5 +51,9 @@ namespace GeneratedTestData
             public string Email { get; set; }
             public string Address { get; set; }
         }
+
+
     }
+
+
 }
