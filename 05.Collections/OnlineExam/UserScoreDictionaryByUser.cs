@@ -9,25 +9,26 @@ namespace OnlineExam
 
         public UserScoreDictionaryByUser(IEnumerable<UserScore> userScores)
         {
-            throw new NotImplementedException();
-            //todo: initialize _participantResultsByUserName
-            // use the UserName as key
-            // use the whole object as a value
+            // initialize _participantResultsByUserName
+            _participantResultsByUserName = new Dictionary<string, UserScore>();
+            foreach (var userScore in userScores)
+            {
+                _participantResultsByUserName.Add(userScore.UserName, userScore);
+            }
         }
 
         public bool TryGetScore(string userName, out int score)
         {
-            throw new NotImplementedException();
-            //ParticipantResult participantResult;
-            // todo: use TryGetValue to get the participant from the dictionary
-            //if (success == false)
-            //{
-            //    score = -1;
-            //    return false;
-            //}
-            //
-            //score = participantResult.Score;
-            //return true;
+            try
+            {
+                score = _participantResultsByUserName[userName].Score;
+                return true;
+            }
+            catch(System.Collections.Generic.KeyNotFoundException)
+            {
+                score = -1;
+                return false;
+            }        
         }
     }
 }

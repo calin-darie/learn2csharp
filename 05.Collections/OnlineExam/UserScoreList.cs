@@ -9,9 +9,12 @@ namespace OnlineExam
 
         public UserScoreList(IEnumerable<UserScore> userScores)
         {
-            throw new NotImplementedException();
-            //todo: initialize _participantResults
-            //_participantResults = participantResults.ToList();
+            // initialize _participantResults
+            _participantResults = new List<UserScore>();
+            foreach(var userScore in userScores)
+            {
+                _participantResults.Add(userScore);
+            }
         }
 
         public bool TryGetScore(string userName, out int score)

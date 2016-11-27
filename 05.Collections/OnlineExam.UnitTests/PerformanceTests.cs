@@ -11,8 +11,49 @@ namespace OnlineExam.UnitTests
         [TestMethod]
         public void ListVsDictionary_ManyEntriesAndManyQueriesByDictionaryKey_DictionaryPerformsBetter()
         {
-            var participantCount = 3000;
-            var queryCount = 100000;
+            ListVsDictionary_DictionaryPerformsBetter(participantCount: 3000, queryCount: 100000);
+            /*
+            Test Name:	ListVsDictionary_ManyEntriesAndManyQueriesByDictionaryKey_DictionaryPerformsBetter
+            Test Outcome:	Passed
+            Result StandardOutput:	list: 2479ms vs dictionary: 9ms
+             */
+        }
+
+        [TestMethod]
+        public void ListVsDictionary_FewEntriesAndManyQueriesByDictionaryKey_DictionaryPerformsBetter()
+        {
+            ListVsDictionary_DictionaryPerformsBetter(participantCount: 50, queryCount: 100000);
+            /*
+            Test Name:	ListVsDictionary_FewEntriesAndManyQueriesByDictionaryKey_DictionaryPerformsBetter
+            Test Outcome:	Passed
+            Result StandardOutput:	list: 59ms vs dictionary: 9ms
+            */
+        }
+
+        [TestMethod]
+        public void ListVsDictionary_ManyEntriesAndFewQueriesByDictionaryKey_DictionaryPerformsBetter()
+        {
+            ListVsDictionary_DictionaryPerformsBetter(participantCount: 5000, queryCount: 50);
+            /*
+            Test Name:	ListVsDictionary_ManyEntriesAndFewQueriesByDictionaryKey_DictionaryPerformsBetter
+            Test Outcome:	Passed
+            Result StandardOutput:	list: 2ms vs dictionary: 0ms
+            */ 
+        }
+
+        [TestMethod]
+        public void ListVsDictionary_FewEntriesAndFewQueriesByDictionaryKey_DictionaryPerformsBetter()
+        {
+            ListVsDictionary_DictionaryPerformsBetter(participantCount: 50, queryCount: 50);
+            /*
+            Test Name:	ListVsDictionary_FewEntriesAndFewQueriesByDictionaryKey_DictionaryPerformsBetter
+            Test Outcome: Passed
+            Result StandardOutput: list: 0ms vs dictionary: 0ms
+            */
+        }
+
+        private void ListVsDictionary_DictionaryPerformsBetter(int participantCount, int queryCount)
+        {
             var participantResults = new UserScore[participantCount];
             for (int i = 0; i < participantCount; i++)
             {
@@ -34,27 +75,9 @@ namespace OnlineExam.UnitTests
                 participantResultDictionaryByUser, queryCount);
 
             Console.WriteLine("list: {0}ms vs dictionary: {1}ms", millisecondsList, millisecondsDictionary);
-            //todo: check the output of the test and write the times below, in a comment
 
             Assert.IsTrue(millisecondsDictionary <= millisecondsList);
         }
-
-        //todo: extract a method so that you can test with various participant counts and query counts:
-        //[TestMethod]
-        //public void ListVsDictionary_FewEntriesAndManyQueriesByDictionaryKey_DictionaryPerformsBetter()
-        //{
-        //    ListVsDictionary_DictionaryPerformsBetter(participantCount: 50, queryCount: 100000);
-        //}
-        //[TestMethod]
-        //public void ListVsDictionary_ManyEntriesAndFewQueriesByDictionaryKey_DictionaryPerformsBetter()
-        //{
-        //    ListVsDictionary_DictionaryPerformsBetter(participantCount: 5000, queryCount: 50);
-        //}
-        //[TestMethod]
-        //public void ListVsDictionary_FewEntriesAndFewQueriesByDictionaryKey_DictionaryPerformsBetter()
-        //{
-        //    ListVsDictionary_DictionaryPerformsBetter(participantCount: 50, queryCount: 50);
-        //}
 
         long TimeQueriesMilliseconds(
             List<string> userNames,
