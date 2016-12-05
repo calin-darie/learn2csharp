@@ -55,9 +55,6 @@ namespace OnlineExam.UnitTests
             Assert.IsFalse(success);
         }
 
-
-        //todo: write test for no scores.
-
         protected abstract IUserScores CreateSystemUnderTest(UserScore[] scores);
     }
 
