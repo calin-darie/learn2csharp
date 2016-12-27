@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace OnlineExam
 {
@@ -9,9 +8,11 @@ namespace OnlineExam
 
         public UserScoreList(IEnumerable<UserScore> userScores)
         {
-            throw new NotImplementedException();
-            //todo: initialize _participantResults
-            //_participantResults = participantResults.ToList();
+            _participantResults = new List<UserScore>();
+            foreach (UserScore userScore in userScores)
+            {
+                _participantResults.Add(userScore);
+            }      
         }
 
         public bool TryGetScore(string userName, out int score)

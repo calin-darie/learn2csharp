@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineExam", "OnlineExam\On
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratedTestData", "GeneratedTestData\GeneratedTestData.csproj", "{AE9E23CF-FA12-43B0-A0C8-4CA1593BEF8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackOverflow", "StackOverflow\StackOverflow.csproj", "{9208EC9C-AB57-4171-9F0B-6E4E193E564F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{AE9E23CF-FA12-43B0-A0C8-4CA1593BEF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE9E23CF-FA12-43B0-A0C8-4CA1593BEF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE9E23CF-FA12-43B0-A0C8-4CA1593BEF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9208EC9C-AB57-4171-9F0B-6E4E193E564F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9208EC9C-AB57-4171-9F0B-6E4E193E564F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9208EC9C-AB57-4171-9F0B-6E4E193E564F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9208EC9C-AB57-4171-9F0B-6E4E193E564F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
