@@ -34,23 +34,33 @@ namespace CircleCollisionDetection
             //ex 2
             // did the circles collide? varianta 1
             Console.WriteLine("Describe another circle");
-            Point otherPoint = ReadPoint("Enter center coordinates for other point");
+            Point otherCircleCenter = ReadPoint("Enter center coordinates for other point");
             double otherCircleRadius = ReadDouble("radiusAnotherCircle: ");
-            var distance = circleCenter.DistanceTo(otherPoint);
-            var radius_sum = otherCircleRadius + radius;
 
-            if (distance == radius_sum)
-            {
-                Console.WriteLine("The two circles are tangentials circles");
-            } 
-            else if (distance > radius_sum)
-            {
-                Console.WriteLine("The two circles are NOT colliding with each other");
-            }
+            var otherCircle = new Circle { Center = otherCircleCenter, Radius = otherCircleRadius };
+            var isColliding= circle.CollidesWith(otherCircle);
+
+            if (isColliding)
+                { Console.WriteLine("The two circles are colliding with each other"); }
             else
-            {
-                Console.WriteLine("The two circles are colliding with each other");
-            }
+                { Console.WriteLine("The two circles are NOT colliding with each other"); }
+                
+
+            //var distance = circleCenter.DistanceTo(otherPoint);
+            //var radius_sum = otherCircleRadius + radius;
+
+            //if (distance == radius_sum)
+            //{
+            //    Console.WriteLine("The two circles are tangentials circles");
+            //} 
+            //else if (distance > radius_sum)
+            //{
+            //    Console.WriteLine("The two circles are NOT colliding with each other");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The two circles are colliding with each other");
+            //}
 
             Console.WriteLine("#######################end of ex2##############################");
 

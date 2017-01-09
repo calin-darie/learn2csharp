@@ -14,7 +14,12 @@ namespace CircleCollisionDetection
 
         public bool ContainsPoint(Point point)
         {
-            return point.DistanceTo(this.Center) < this.Radius;
+            return point.DistanceTo(this.Center) <= this.Radius;
+        }
+
+        public bool CollidesWith(Circle other_circle)
+        {
+            return other_circle.Center.DistanceTo(this.Center) <= (this.Radius + other_circle.Radius);
         }
     }
 }
