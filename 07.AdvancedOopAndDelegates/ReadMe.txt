@@ -12,25 +12,13 @@ Follow the tutorial here:
 http://codetunnel.io/introduction-to-linq-part-i-delegates/
 Create a console app called ScifiShows based on the tutorial.
 
-2. Ads 
-Spam simulator
-a) Create an AdTarget class with public read & write properties for FirstName, LastName, BirthDate, Email.
-Also create a property called Age. This property only has a getter. The getter computes the age from DateTime.Today and BirthDate.
-b) Create an PersonalizedAd class with public read & write properties for ToAddress, Subject, and Message.
-c) Create an interface called IAdTargetRepository with a method to GetAallAdTargets
-d) Create a class that implements the repository interface for quick testing. 
-Use Genfu, or Bogus, or another generator of your choice.
-Generate a list of 200 random AdTargets, with random BirthDates between 1905 and 2005.
-e) Print the targets to the console. Make sure any var or field you store the repository to is of the interface type, not of the class type.
-This way, we can easily switch to a real implementation that goes to the database.
-f) Read a target age interval from the console (e.g. minAge 15 - maxAge 30)
-g) Use LINQ to create a list of PersonalizedAds for each AdTarget in the target age range. 
-ToAddress = target.Email
-Subject = "Wanna buy our new product that sings 'O come all ye faithful?'"
-Message = "Hey {target.FirstName}, you're in for a treat blah blah"
-Use 
-.Where(...)
-.Select(...)
-.ToList()
-h) Make sure the code that creates the PersonalizedAds is in its own class. 
-Write tests for that class.
+2. Store the following names in a list or array, or anything else IEnumerable.
+Horia, Yusuf, Florin, Floarea, Horia, Elena, Filimon, Sofia, Horia, Leo, Hannah, Sorin, Mircea, Alan, Sorin
+Write LINQ queries that return:
+- the names ending in "a": Horia, Floarea, ... hint: filtering using .Where(
+- all the names, transformed to uppercase: HORIA, YUSUF, FLORIN, ... hint: projection using .Select(
+- the letter count for each name: 5, 5, 6, ... hint: projection using .Select(
+- the names ending in "n", transformed to uppercase: FLORIN, ... hint: filtering followed by projection. you may chain the operations like this names.Where(...).Select(...)
+- all distinct names
+- the name count
+- the distinct name count
