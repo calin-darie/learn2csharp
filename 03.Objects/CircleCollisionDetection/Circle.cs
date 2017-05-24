@@ -8,6 +8,12 @@ namespace CircleCollisionDetection
 {
     public class Circle
     {
+
+        //adaug doua proprietati: Point Center si Radius
+        public Point Center { get; set; }
+        public double Radius { get; set; } 
+
+
         //definire constructor: are acelasi nume ca si clasa si nu are return type
         public Circle(Point Center, Double Radius)
         {
@@ -19,9 +25,7 @@ namespace CircleCollisionDetection
         public Circle()
         { }
 
-        //adaug doua proprietati: Point Center si Radius
-        public Point Center { get; set; }
-        public double Radius { get; set; }
+       
 
 
         public bool ContainsPoint(Point point)
