@@ -23,7 +23,18 @@ namespace SwitchOnEnum
                 case Season.Winter:
                     song = "Ada Milea - Bradu' a murit";
                     break;
-                    //todo: how about the other seasons? fill them all in
+                //todo: how about the other seasons? fill them all in
+
+                case Season.Spring:
+                    song = "HUGH MASAKELA - GRAZING IN THE GRASS(1968)";
+                    break;
+                case Season.Summer:
+                    song = "Enya - Halcyon and on";
+                    break;
+                case Season.Autumn:
+                    song = "JUSTIN TIMBERLAKE - CRY ME A RIVER";
+                    break;
+
                 default:
                     throw new InvalidOperationException("after handling all seasons above, this code becomes unreachable");
             }
