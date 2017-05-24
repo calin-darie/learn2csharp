@@ -8,13 +8,8 @@ namespace CircleCollisionDetection.UnitTests
         [TestMethod]
         public void GivenPointIsCircleCenter_Contains_ReturnsTrue()
         {
-            var circle = new Circle
-            {
-                Center = new Point { X= 100, Y = 100 },
-                Radius = 10
-            };
+            var circle = new Circle(new Point { X = 100, Y = 100 },10 );
             var point = new Point { X=  100, Y = 100 };
-
             var circleContainsPoint = circle.ContainsPoint(point);
 
             Assert.IsTrue(circleContainsPoint);

@@ -4,63 +4,37 @@ namespace CircleCollisionDetection
 {
     class Program
     {//in clasa program pun toate metodele
+        static Circle ReadCircle(string prompt)
+        {
+          Console.WriteLine(prompt);
+          Point Center = ReadPoint("CenterOfCircle:");
+          Double Radius= ReadDouble("RadiusOfCircle:");
+           
+            return new Circle(Center, Radius);
+        }
         static void Main()
         {   //in static void main method am ce se executa; in afara ei dar totusi in program se pun restul metodelor
-            //ex1
-            Circle circle = new Circle();//fac un cerc cu parametrii din clasa circle: centru si radius
-            Point circleCenter = ReadPoint("Enter center coordinates for initial circle");
-            double radius = ReadDouble("radiusinItialCircle: ");
-
-            circle.Center = circleCenter;
-            circle.Radius = radius;
-
+            
             Point clickPoint = ReadPoint("Enter click coordinates of the click");
-
-            circle.ContainsPoint(clickPoint);
-
-            
-
-            
-            //where was the click comparing with the circle?-varianta 2 care verifica doar 2 varinate 
-            var distance1 = circleCenter.DistanceTo(clickPoint);
-            bool wasClickOnCircle = (distance1 <= radius);//asociez lui wasClickOnCircle valoarea de adevar din comparatia dintre distanta si radius
+            Circle circle= ReadCircle("first circle");
+                               
+            //where was the click comparing with the circle?-varianta 2 care verifica doar 2 varinate
+            bool wasClickOnCircle = circle.ContainsPoint(clickPoint);
             var clickMessage = wasClickOnCircle ? //daca e adevarata linia anterioara, lui clickMessage i se va asocia stringul de pe linia imediat urmatoare; altfel i se asociaza stringul de pe a doua linie urmatoare
                 "Click was inside the circle." :
                 "Click happened outside the circle.";
             Console.WriteLine(clickMessage);
             Console.WriteLine("#######################end of ex1##############################");
 
-
-            //ex 2
             // did the circles collide? varianta 1
-            Console.WriteLine("Describe another circle");
-            Point otherCircleCenter = ReadPoint("Enter center coordinates for other point");
-            double otherCircleRadius = ReadDouble("radiusAnotherCircle: ");
-
-            var otherCircle = new Circle { Center = otherCircleCenter, Radius = otherCircleRadius };
-            var isColliding= circle.CollidesWith(otherCircle);
+            Circle othercircle = ReadCircle("second circle");
+            var isColliding= circle.CollidesWith(othercircle);
 
             if (isColliding)
                 { Console.WriteLine("The two circles are colliding with each other"); }
             else
                 { Console.WriteLine("The two circles are NOT colliding with each other"); }
                 
-
-            //var distance = circleCenter.DistanceTo(otherPoint);
-            //var radius_sum = otherCircleRadius + radius;
-
-            //if (distance == radius_sum)
-            //{
-            //    Console.WriteLine("The two circles are tangentials circles");
-            //} 
-            //else if (distance > radius_sum)
-            //{
-            //    Console.WriteLine("The two circles are NOT colliding with each other");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("The two circles are colliding with each other");
-            //}
 
             Console.WriteLine("#######################end of ex2##############################");
 
@@ -74,6 +48,7 @@ namespace CircleCollisionDetection
         /// </summary>
         /// <param name="prompt">message to show when asking for input</param>
         /// <returns></returns>
+     
         private static double ReadDouble(string prompt)
         {
             double value;
@@ -96,8 +71,8 @@ namespace CircleCollisionDetection
         {
             //Console.WriteLine("Describe the initial circle");
             Console.WriteLine(consoleInput);
-            double clickPointX = ReadDouble("xclick: ");
-            double clickPointY = ReadDouble("yclick: ");
+            double clickPointX = ReadDouble("x: ");
+            double clickPointY = ReadDouble("y: ");
             var givenPoint = new Point
             {
                 X = clickPointX,
@@ -106,10 +81,6 @@ namespace CircleCollisionDetection
             return givenPoint;
         }
 
-        //static bool IsPointInCircle(Point point, Point circleCenter, double circleRadius)
-        //{
-        //    return point.DistanceTo(circleCenter) < circleRadius;
-        //}
 
     }// aici se iese din program
 }  //aici se iese din namespace   
