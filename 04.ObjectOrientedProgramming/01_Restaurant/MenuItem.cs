@@ -15,9 +15,7 @@ namespace _01_Restaurant
         public static void centerText(String text, String itemName, int offset = beverageTextLength)
         {                      
             Console.Write(new string(' ', (Console.WindowWidth - offset) / 2 - itemName.Length));
-            Console.WriteLine(text);
-
-            
+            Console.WriteLine(text);            
         }
     }
 }

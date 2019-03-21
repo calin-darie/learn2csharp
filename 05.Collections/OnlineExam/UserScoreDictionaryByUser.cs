@@ -5,6 +5,7 @@ namespace OnlineExam
     public class UserScoreDictionaryByUser : IUserScores
     {
         private UserScore participantResult;
+        
         Dictionary<string, UserScore> _participantResultsByUserName;
 
         public UserScoreDictionaryByUser(IEnumerable<UserScore> userScores)
